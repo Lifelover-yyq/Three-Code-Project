@@ -1,2 +1,6 @@
-# study
-In order to improve my programming ability.
+# 内容
+本科阶段独立完成的所有课程设计：
+1、软件设计开发实践I II III
+2、软件工程大作业
+3、硬件课程设计I II III（EDA实训、CPU设计、嵌入式系统设计实践）
+4、毕业设计
