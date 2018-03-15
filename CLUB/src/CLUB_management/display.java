@@ -1,5 +1,5 @@
 package CLUB_management;
-
+/*just test*/
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -12,44 +12,44 @@ import javax.swing.event.PopupMenuListener;
 import javax.swing.table.DefaultTableModel;
 
 public class display {
-	/* Ö÷´°¿ÚÃæ°å·Ö²¼*/
-	private JFrame ClubFrame = new JFrame("Ñ§ÉúÉçÍÅĞÅÏ¢¹ÜÀíÏµÍ³");
+	/* ä¸»çª—å£é¢æ¿åˆ†å¸ƒ*/
+	private JFrame ClubFrame = new JFrame("å­¦ç”Ÿç¤¾å›¢ä¿¡æ¯ç®¡ç†ç³»ç»Ÿ");
 	private JPanel simplePanel = new JPanel();	
 	private JPanel daohangPanel = new JPanel();
 	private JPanel putongPanel = new JPanel();
 	private JPanel guanliPanel = new JPanel();
 	private JPanel TimePanel = new JPanel();
 	private JPanel mainPanel = new JPanel();
-	/*Ö÷´°¿ÚÊ±¼äÃæ°å*/
+	/*ä¸»çª—å£æ—¶é—´é¢æ¿*/
 	final JLabel TimeLabel = new JLabel();
 	final SimpleDateFormat format = new SimpleDateFormat(
-			"µ±Ç°Ê±¼ä: yÄêMÔÂdÈÕE H:m:s",Locale.CHINA);
+			"å½“å‰æ—¶é—´: yå¹´Mæœˆdæ—¥E H:m:s",Locale.CHINA);
 	private Timer t=new Timer();
 	private JLabel ClubwelcomeLabel;
 	private String Clubwelcome;
-	/*Ö÷´°¿Ú¼òÂÔĞÅÏ¢Ãæ°å*/
-	private JLabel WelcomeLabel1 = new JLabel("ÓÃ»§:");
+	/*ä¸»çª—å£ç®€ç•¥ä¿¡æ¯é¢æ¿*/
+	private JLabel WelcomeLabel1 = new JLabel("ç”¨æˆ·:");
 	private String WelcomeKind1;
 	private String WelcomeKind2;
 	private JLabel WelcomeLabel2 = new JLabel();
 	private JLabel WelcomeLabel3 = new JLabel();
-	/*¹¦ÄÜµ¼º½Ãæ°å*/
+	/*åŠŸèƒ½å¯¼èˆªé¢æ¿*/
 	private CardLayout card1 = new CardLayout();
-	private JLabel ClubSystem = new JLabel("ÓÃ»§²Ëµ¥");
-	private JButton ModifyPassword = new JButton("©ÁĞŞ¸ÄÃÜÂë");
-	private JButton ExitClub = new JButton("©ÁÉêÇëÍËÉç");
-	private JButton ExitLogin = new JButton("©ÁÍË³öµÇÂ¼");
-	private JButton ExitSystem = new JButton("©¹ÍË³öÏµÍ³");
-	private JLabel InfView = new JLabel("»ù±¾ĞÅÏ¢");
-	private JButton Perinf = new JButton("©Á¸öÈËĞÅÏ¢");
-	private JButton Clubinf = new JButton("©ÁÉçÍÅĞÅÏ¢");
-	private JButton Meminf = new JButton("©¹ÉçÔ±ĞÅÏ¢");
-	private JLabel ClubAct = new JLabel("¸ü¶àĞÅÏ¢");
-	private JButton kaoping = new JButton("©Á¿¼ÆÀÇé¿ö");
-	private JButton Clubpost = new JButton("©ÁÉçÍÅ¹«¸æ");
-	private JButton liuyan = new JButton("©¹ÁôÑÔÈºÁÄ");
-	private JButton last = new JButton("·µ»Ø");
-	/*Õ¹Ê¾Ö÷Ãæ°å*/
+	private JLabel ClubSystem = new JLabel("ç”¨æˆ·èœå•");
+	private JButton ModifyPassword = new JButton("â”ä¿®æ”¹å¯†ç ");
+	private JButton ExitClub = new JButton("â”ç”³è¯·é€€ç¤¾");
+	private JButton ExitLogin = new JButton("â”é€€å‡ºç™»å½•");
+	private JButton ExitSystem = new JButton("â”•é€€å‡ºç³»ç»Ÿ");
+	private JLabel InfView = new JLabel("åŸºæœ¬ä¿¡æ¯");
+	private JButton Perinf = new JButton("â”ä¸ªäººä¿¡æ¯");
+	private JButton Clubinf = new JButton("â”ç¤¾å›¢ä¿¡æ¯");
+	private JButton Meminf = new JButton("â”•ç¤¾å‘˜ä¿¡æ¯");
+	private JLabel ClubAct = new JLabel("æ›´å¤šä¿¡æ¯");
+	private JButton kaoping = new JButton("â”è€ƒè¯„æƒ…å†µ");
+	private JButton Clubpost = new JButton("â”ç¤¾å›¢å…¬å‘Š");
+	private JButton liuyan = new JButton("â”•ç•™è¨€ç¾¤èŠ");
+	private JButton last = new JButton("è¿”å›");
+	/*å±•ç¤ºä¸»é¢æ¿*/
 	private CardLayout card2 = new CardLayout();
 	private JPanel ModifyPWPanel = new JPanel();
 	private JPanel ExitClubPanel = new JPanel();
@@ -61,211 +61,211 @@ public class display {
 	private JPanel ClubpostPanel = new JPanel();
 	private JPanel issuepostPanel = new JPanel();
 	private JPanel liuyanPanel = new JPanel();
-	/*ĞŞ¸ÄÃÜÂëÃæ°å*/
-	private JLabel OldPWLabel = new JLabel("¾ÉÃÜÂë:");
-	private JLabel NewPWLabel = new JLabel("ĞÂÃÜÂë:");
-	private JLabel ConfirmPWLabel = new JLabel("È·ÈÏĞÂÃÜÂë:");
+	/*ä¿®æ”¹å¯†ç é¢æ¿*/
+	private JLabel OldPWLabel = new JLabel("æ—§å¯†ç :");
+	private JLabel NewPWLabel = new JLabel("æ–°å¯†ç :");
+	private JLabel ConfirmPWLabel = new JLabel("ç¡®è®¤æ–°å¯†ç :");
 	private JPasswordField OldPWLabelText = new JPasswordField();
 	private JPasswordField NewPWLabelText = new JPasswordField();
 	private JPasswordField ConfirmPWLabelText = new JPasswordField();
-	private JButton ModifyPWSure = new JButton("È·ÈÏĞŞ¸Ä");
-	private JButton ModifyPWCancel = new JButton("ÃÜÂëÖØÖÃ");
-	private JDialog ModifyPWSuccess = new JDialog(ClubFrame,"ĞŞ¸Ä³É¹¦!",true);
-	private JLabel ModifyPWSuccessLabel = new JLabel("ÃÜÂëĞŞ¸Ä³É¹¦!");
-	private JButton ModifyPWSuccessClose = new JButton("È·¶¨");
-	private JDialog ModifyPWError = new JDialog(ClubFrame,"ÊäÈëÓĞÎó!",true);
-	private JLabel ModifyPWErrorLabel = new JLabel("ÃÜÂëÊäÈëÓĞÎó!");
-	private JButton ModifyPWErrorClose = new JButton("¹Ø±Õ");
-	/*ÉêÇëÍËÉçÃæ°å*/
-	private JButton ExitClubcheck = new JButton("ÍËÉçÉóºË");
-	private JLabel ExitClubLabel = new JLabel("ÇëÌîĞ´ÄúµÄÉêÇëÀíÓÉ£º(15-100×Ö)");
+	private JButton ModifyPWSure = new JButton("ç¡®è®¤ä¿®æ”¹");
+	private JButton ModifyPWCancel = new JButton("å¯†ç é‡ç½®");
+	private JDialog ModifyPWSuccess = new JDialog(ClubFrame,"ä¿®æ”¹æˆåŠŸ!",true);
+	private JLabel ModifyPWSuccessLabel = new JLabel("å¯†ç ä¿®æ”¹æˆåŠŸ!");
+	private JButton ModifyPWSuccessClose = new JButton("ç¡®å®š");
+	private JDialog ModifyPWError = new JDialog(ClubFrame,"è¾“å…¥æœ‰è¯¯!",true);
+	private JLabel ModifyPWErrorLabel = new JLabel("å¯†ç è¾“å…¥æœ‰è¯¯!");
+	private JButton ModifyPWErrorClose = new JButton("å…³é—­");
+	/*ç”³è¯·é€€ç¤¾é¢æ¿*/
+	private JButton ExitClubcheck = new JButton("é€€ç¤¾å®¡æ ¸");
+	private JLabel ExitClubLabel = new JLabel("è¯·å¡«å†™æ‚¨çš„ç”³è¯·ç†ç”±ï¼š(15-100å­—)");
 	private JTextArea ExitClubText = new JTextArea(500,250);
-	private JButton ExitClubSure = new JButton("Ìá½»ÉêÇë");
-	private JButton ExitClubCancel = new JButton("È¡ÏûÉêÇë");
-	private JDialog ExitClubDialog = new JDialog(ClubFrame,"Ìá½»³É¹¦",true);
-	private JLabel ExitClubDialogLabel = new JLabel("ÉêÇëÒÑÌá½»£¬ÇëµÈ´ı¹ÜÀíÔ±ÉóºË!");
-	private JButton ExitClubDialogSure = new JButton("È·¶¨");
-	 /*ÍËÉçÉóºËÃæ°å*/
+	private JButton ExitClubSure = new JButton("æäº¤ç”³è¯·");
+	private JButton ExitClubCancel = new JButton("å–æ¶ˆç”³è¯·");
+	private JDialog ExitClubDialog = new JDialog(ClubFrame,"æäº¤æˆåŠŸ",true);
+	private JLabel ExitClubDialogLabel = new JLabel("ç”³è¯·å·²æäº¤ï¼Œè¯·ç­‰å¾…ç®¡ç†å‘˜å®¡æ ¸!");
+	private JButton ExitClubDialogSure = new JButton("ç¡®å®š");
+	 /*é€€ç¤¾å®¡æ ¸é¢æ¿*/
 	int Exitflag = 0;
-	private JLabel Applicant = new JLabel("ÉêÇëÈË");
+	private JLabel Applicant = new JLabel("ç”³è¯·äºº");
 	private JTextField ApplicantText = new JTextField();
-	private JLabel Applicantion = new JLabel("ÉêÇëÀíÓÉ");
+	private JLabel Applicantion = new JLabel("ç”³è¯·ç†ç”±");
 	private JTextArea ApplicantionText = new JTextArea(500,250);
-	private JButton PassApplicantion = new JButton("Åú×¼ÉêÇë");
-	private JButton RefuseApplicantion = new JButton("¾Ü¾øÉêÇë");
-	/*Ö÷´°¿ÚÍË³öÏµÍ³ÌáÊ¾´°¿Ú*/
-	private JDialog ExitFrame = new JDialog(ClubFrame,"ÍË³öÏµÍ³",true);
+	private JButton PassApplicantion = new JButton("æ‰¹å‡†ç”³è¯·");
+	private JButton RefuseApplicantion = new JButton("æ‹’ç»ç”³è¯·");
+	/*ä¸»çª—å£é€€å‡ºç³»ç»Ÿæç¤ºçª—å£*/
+	private JDialog ExitFrame = new JDialog(ClubFrame,"é€€å‡ºç³»ç»Ÿ",true);
 	private JLabel ExitimgLabel;
-	private JLabel ExitLabel = new JLabel("È·ÈÏÍË³öÏµÍ³Âğ£¿");
-	private JButton ExitSure = new JButton("È·ÈÏ");
-	private JButton ExitCancel = new JButton("È¡Ïû");
-	/*Ö÷´°¿ÚÍË³öµÇÂ¼ÌáÊ¾´°¿Ú*/
-	private JDialog ExitLoginFrame = new JDialog(ClubFrame,"ÍË³öµÇÂ¼",true);
+	private JLabel ExitLabel = new JLabel("ç¡®è®¤é€€å‡ºç³»ç»Ÿå—ï¼Ÿ");
+	private JButton ExitSure = new JButton("ç¡®è®¤");
+	private JButton ExitCancel = new JButton("å–æ¶ˆ");
+	/*ä¸»çª—å£é€€å‡ºç™»å½•æç¤ºçª—å£*/
+	private JDialog ExitLoginFrame = new JDialog(ClubFrame,"é€€å‡ºç™»å½•",true);
 	private JLabel ExitLoginimgLabel;
-	private JLabel ExitLoginLabel = new JLabel("È·ÈÏÍË³öµÇÂ¼Âğ£¿");
-	private JButton ExitLoginSure = new JButton("È·ÈÏ");
-	private JButton ExitLoginCancel = new JButton("È¡Ïû");
-	/*¸öÈËĞÅÏ¢Ãæ°å*/
+	private JLabel ExitLoginLabel = new JLabel("ç¡®è®¤é€€å‡ºç™»å½•å—ï¼Ÿ");
+	private JButton ExitLoginSure = new JButton("ç¡®è®¤");
+	private JButton ExitLoginCancel = new JButton("å–æ¶ˆ");
+	/*ä¸ªäººä¿¡æ¯é¢æ¿*/
 	int Num = -1;
 	private JPanel GenderPanel = new JPanel();
-	private JLabel ShowID = new JLabel("Ñ§ ºÅ:");
+	private JLabel ShowID = new JLabel("å­¦ å·:");
 	private JTextField ShowIDText = new JTextField(10);
-	private JLabel PerName = new JLabel("ĞÕ Ãû:");
+	private JLabel PerName = new JLabel("å§“ å:");
 	private JTextField PerNameText = new JTextField(5);
-	private JLabel Gender = new JLabel("ĞÔ ±ğ:");
+	private JLabel Gender = new JLabel("æ€§ åˆ«:");
 	private ButtonGroup GenderKind = new ButtonGroup();
-	private JRadioButton Male = new JRadioButton("ÄĞ");
-	private JRadioButton Female = new JRadioButton("Å®");
-	private JLabel Profession = new JLabel("Ñ§ Ôº:");
+	private JRadioButton Male = new JRadioButton("ç”·");
+	private JRadioButton Female = new JRadioButton("å¥³");
+	private JLabel Profession = new JLabel("å­¦ é™¢:");
 	private JTextField ProfessionText = new JTextField(10);
-	private JLabel Telephone = new JLabel("ÊÖ »ú:");
+	private JLabel Telephone = new JLabel("æ‰‹ æœº:");
 	private JTextField TelephoneText = new JTextField(11);
 	private JLabel QQ = new JLabel("Q Q:");
 	private JTextField QQText = new JTextField(10);
-	private JLabel JoinTime = new JLabel("ÈëÉç Ê±¼ä:");
+	private JLabel JoinTime = new JLabel("å…¥ç¤¾ æ—¶é—´:");
 	private JTextField JoinTimeText = new JTextField(10);
-	private JLabel Department = new JLabel("ËùÊô ²¿ÃÅ:");
+	private JLabel Department = new JLabel("æ‰€å± éƒ¨é—¨:");
 	private JTextField DepartmentText = new JTextField(5);
-	private JLabel Duty = new JLabel("Ö° Îñ:");
+	private JLabel Duty = new JLabel("èŒ åŠ¡:");
 	private JTextField DutyText = new JTextField(5);
-	private JButton PerModify = new JButton("ĞŞ¸Ä");
-	private JButton PerSave = new JButton("±£´æ");
-	/*ÉçÍÅĞÅÏ¢Ãæ°å*/
-	private JLabel ClubName = new JLabel("ÉçÍÅÃû³Æ:");
+	private JButton PerModify = new JButton("ä¿®æ”¹");
+	private JButton PerSave = new JButton("ä¿å­˜");
+	/*ç¤¾å›¢ä¿¡æ¯é¢æ¿*/
+	private JLabel ClubName = new JLabel("ç¤¾å›¢åç§°:");
 	private JTextField ClubNameText = new JTextField(10);
-	private JLabel SetTime = new JLabel("³ÉÁ¢Ê±¼ä:");
+	private JLabel SetTime = new JLabel("æˆç«‹æ—¶é—´:");
 	private JTextField SetTimeText = new JTextField(10);
-	private JLabel ClubKind = new JLabel("ÉçÍÅÀà±ğ:");
+	private JLabel ClubKind = new JLabel("ç¤¾å›¢ç±»åˆ«:");
 	private JTextField ClubKindText = new JTextField(10);
-	private JLabel ClubMemNum = new JLabel("ÉçÍÅÈËÊı:");
+	private JLabel ClubMemNum = new JLabel("ç¤¾å›¢äººæ•°:");
 	private JTextField ClubMemNumText = new JTextField(3);
-	private JLabel ClubTel = new JLabel("ÉçÍÅÁªÏµ·½Ê½:");
+	private JLabel ClubTel = new JLabel("ç¤¾å›¢è”ç³»æ–¹å¼:");
 	private JTextField ClubTelText = new JTextField(11);
-	private JLabel ClubBoss = new JLabel("Éç³¤ĞÕÃû:");
+	private JLabel ClubBoss = new JLabel("ç¤¾é•¿å§“å:");
 	private JTextField ClubBossText = new JTextField(10);
-	private JLabel ClubCharge2 = new JLabel("µÚ¶ş¸ºÔğÈË:");
+	private JLabel ClubCharge2 = new JLabel("ç¬¬äºŒè´Ÿè´£äºº:");
 	private JTextField ClubCharge2Text = new JTextField();
-	private JLabel ClubCharge3 = new JLabel("µÚÈı¸ºÔğÈË:");
+	private JLabel ClubCharge3 = new JLabel("ç¬¬ä¸‰è´Ÿè´£äºº:");
 	private JTextField ClubCharge3Text = new JTextField();
-	private JButton ClubModify = new JButton("ĞŞ¸Ä");
-	private JButton ClubSave = new JButton("±£´æ");
-	/*ÉçÔ±ĞÅÏ¢ÏÔÊ¾Ãæ°å*/
+	private JButton ClubModify = new JButton("ä¿®æ”¹");
+	private JButton ClubSave = new JButton("ä¿å­˜");
+	/*ç¤¾å‘˜ä¿¡æ¯æ˜¾ç¤ºé¢æ¿*/
 	private JTable MeminfTable;
 	private DefaultTableModel Meminfmodel;
-	private String MeminfTableHead[] = {"Ñ§ºÅ","ĞÕÃû","ĞÔ±ğ","Ñ§Ôº","ÊÖ»úºÅ","QQ",
-			"ÈëÉçÊ±¼ä","²¿ÃÅ","Ö°Îñ"};
+	private String MeminfTableHead[] = {"å­¦å·","å§“å","æ€§åˆ«","å­¦é™¢","æ‰‹æœºå·","QQ",
+			"å…¥ç¤¾æ—¶é—´","éƒ¨é—¨","èŒåŠ¡"};
 	private Object MeminfTabelObject[][];
-	private JButton AddMem = new JButton("Ìí¼ÓÉçÔ±");
-	private JButton DeleteMem = new JButton("É¾³ıÉçÔ±");
-	private JButton SaveModify = new JButton("±£´æĞŞ¸Ä");
-	private JButton SearchMem = new JButton("²éÕÒÉçÔ±");
-	private JLabel SearchName = new JLabel("ÇëÊäÈë²éÕÒµÄID:");
+	private JButton AddMem = new JButton("æ·»åŠ ç¤¾å‘˜");
+	private JButton DeleteMem = new JButton("åˆ é™¤ç¤¾å‘˜");
+	private JButton SaveModify = new JButton("ä¿å­˜ä¿®æ”¹");
+	private JButton SearchMem = new JButton("æŸ¥æ‰¾ç¤¾å‘˜");
+	private JLabel SearchName = new JLabel("è¯·è¾“å…¥æŸ¥æ‰¾çš„ID:");
 	private JTextField SearchNameText = new JTextField();
 	private JLabel MemNumLabel;
 	private int MemNum;
-	/*ÉçÍÅ¿¼ÆÀÇé¿öÃæ°å*/
+	/*ç¤¾å›¢è€ƒè¯„æƒ…å†µé¢æ¿*/
 	private JTable kaopingTable;
 	private DefaultTableModel kaopingmodel;
-	private String kaopingTableHead[] = {"Ñ§ºÅ","ĞÕÃû","¿¼ÆÀ·Ö(Âú·Ö100)","×ÛºÏÆÀ¼ÛÓï"};
+	private String kaopingTableHead[] = {"å­¦å·","å§“å","è€ƒè¯„åˆ†(æ»¡åˆ†100)","ç»¼åˆè¯„ä»·è¯­"};
 	private Object kaopingTabelObject[][];
-	private JButton givekaoping = new JButton("ÉçÔ±¿¼ÆÀ");
-	private JButton Savekaoping = new JButton("±£´æ¿¼ÆÀ");
-	/*ÉçÍÅ¹«¸æÃæ°å*/
-	private JButton issuepost = new JButton("·¢²¼ĞÂ¹«¸æ");
-	private JButton Deletepost = new JButton("É¾³ı¹«¸æ");
-	private JLabel Showposttitle = new JLabel("±êÌâ");
-	private JLabel Showpostmainbody = new JLabel("ÕıÎÄ");
+	private JButton givekaoping = new JButton("ç¤¾å‘˜è€ƒè¯„");
+	private JButton Savekaoping = new JButton("ä¿å­˜è€ƒè¯„");
+	/*ç¤¾å›¢å…¬å‘Šé¢æ¿*/
+	private JButton issuepost = new JButton("å‘å¸ƒæ–°å…¬å‘Š");
+	private JButton Deletepost = new JButton("åˆ é™¤å…¬å‘Š");
+	private JLabel Showposttitle = new JLabel("æ ‡é¢˜");
+	private JLabel Showpostmainbody = new JLabel("æ­£æ–‡");
 	private JTextField ShowposttitleText = new JTextField();
 	private JTextArea ShowpostmainbodyText = new JTextArea();
-	private JButton previouspost = new JButton("ÉÏÒ»Ò³");
-	private JButton nextpost = new JButton("ÏÂÒ»Ò³");
-	private JLabel postnum = new JLabel("µ±Ç°Ò³Êı:");
+	private JButton previouspost = new JButton("ä¸Šä¸€é¡µ");
+	private JButton nextpost = new JButton("ä¸‹ä¸€é¡µ");
+	private JLabel postnum = new JLabel("å½“å‰é¡µæ•°:");
 	@SuppressWarnings("rawtypes")
 	private JComboBox postnumbox = new JComboBox();
-	/*·¢²¼¹«¸æÃæ°å*/
+	/*å‘å¸ƒå…¬å‘Šé¢æ¿*/
 	int Postflag = 0;
-	private JLabel posttitle = new JLabel("±êÌâ(±ØÌî)");
-	private JLabel postmainbody = new JLabel("ÕıÎÄ(±ØÌî,15-250×Ö)");
+	private JLabel posttitle = new JLabel("æ ‡é¢˜(å¿…å¡«)");
+	private JLabel postmainbody = new JLabel("æ­£æ–‡(å¿…å¡«,15-250å­—)");
 	private JTextField posttitleText = new JTextField();
 	private JTextArea postmainbodyText = new JTextArea();
-	private JButton issuepostSure = new JButton("·¢²¼¹«¸æ");
-	private JButton issuepostCancel = new JButton("È¡Ïû·¢²¼");
-	/*ÁôÑÔÈºÁÄÃæ°å*/
-	private JLabel liuyanLabel = new JLabel("½ÓÊÜÁôÑÔ½¨Òé¡¢ÏĞ³¶ÁÄÌì£¬Çë²»ÒªË¢ÆÁ£¬²»Òª·¢±í²»µ±µÄÑÔÂÛ£¡");
+	private JButton issuepostSure = new JButton("å‘å¸ƒå…¬å‘Š");
+	private JButton issuepostCancel = new JButton("å–æ¶ˆå‘å¸ƒ");
+	/*ç•™è¨€ç¾¤èŠé¢æ¿*/
+	private JLabel liuyanLabel = new JLabel("æ¥å—ç•™è¨€å»ºè®®ã€é—²æ‰¯èŠå¤©ï¼Œè¯·ä¸è¦åˆ·å±ï¼Œä¸è¦å‘è¡¨ä¸å½“çš„è¨€è®ºï¼");
 	private JTextArea liuyanArea = new JTextArea();
 	private JTextField liuyanText = new JTextField();
-	private JButton liuyanOK = new JButton("ÎÒº°");
-	private JButton liuyanCancel = new JButton("Çå¿Õ");
+	private JButton liuyanOK = new JButton("æˆ‘å–Š");
+	private JButton liuyanCancel = new JButton("æ¸…ç©º");
 	private Timer count = new Timer();
-	/* µÇÂ¼´°¿Ú×é¼ş */
-	private JFrame LoginFrame = new JFrame("µÇÂ¼ÏµÍ³");
-	private JLabel ID = new JLabel("ID(Ñ§ºÅ):");
+	/* ç™»å½•çª—å£ç»„ä»¶ */
+	private JFrame LoginFrame = new JFrame("ç™»å½•ç³»ç»Ÿ");
+	private JLabel ID = new JLabel("ID(å­¦å·):");
 	private JTextField IDText = new JTextField(10);
-	private JLabel PassWord = new JLabel("µÇÂ¼ÃÜÂë:");
+	private JLabel PassWord = new JLabel("ç™»å½•å¯†ç :");
 	private JPasswordField PassWordText = new JPasswordField(10);
-	private JButton LoginButton = new JButton("È·ÈÏµÇÂ¼");
-	private JButton ResetButton = new JButton("ÖØĞÂÊäÈë");
+	private JButton LoginButton = new JButton("ç¡®è®¤ç™»å½•");
+	private JButton ResetButton = new JButton("é‡æ–°è¾“å…¥");
 	private ButtonGroup LoginKind = new ButtonGroup();
-	private JRadioButton putong = new JRadioButton("ÆÕÍ¨ÓÃ»§");
-	private JRadioButton guanli = new JRadioButton("¹ÜÀíÔ±ÓÃ»§");
-	private JLabel LoginLabel = new JLabel("³õÊ¼ÃÜÂë¼´ÎªÑ§ºÅ£¬µÇÂ½ºóÇë×ÔĞĞĞŞ¸Ä!");
-	/*ÍËÉçÅú×¼ÌáÊ¾´°¿Ú*/
-	private JDialog ExitClubSuccessDialog = new JDialog(ClubFrame,"³É¹¦ÍËÉç",true);
-	private JLabel ExitClubSuccessLabel1 = new JLabel("¹ÜÀíÔ±Åú×¼ÁËÄúµÄÍËÉçÉêÇë£¬");
-	private JLabel ExitClubSuccessLabel2 = new JLabel("ÄúÒÑÍË³ö±¾ÉçÍÅ!");
-	private JButton ExitClubSuccessSure = new JButton("È·¶¨");
-	/*ÍËÉç¾Ü¾øÌáÊ¾´°¿Ú*/
-	private JDialog ExitClubDefaultDialog = new JDialog(ClubFrame,"ÉêÇë±»¾Ü¾ø",true);
-	private JLabel ExitClubDefaultLabel = new JLabel("¹ÜÀíÔ±¾Ü¾øÁËÄúµÄÍËÉçÉêÇë!");
-	private JButton ExitClubDefaultSure = new JButton("È·¶¨");
-	/*´íÎó´°¿Ú×é¼ş */
-	private JDialog ErrorFrame = new JDialog(LoginFrame,"´íÎó£¡",true);
+	private JRadioButton putong = new JRadioButton("æ™®é€šç”¨æˆ·");
+	private JRadioButton guanli = new JRadioButton("ç®¡ç†å‘˜ç”¨æˆ·");
+	private JLabel LoginLabel = new JLabel("åˆå§‹å¯†ç å³ä¸ºå­¦å·ï¼Œç™»é™†åè¯·è‡ªè¡Œä¿®æ”¹!");
+	/*é€€ç¤¾æ‰¹å‡†æç¤ºçª—å£*/
+	private JDialog ExitClubSuccessDialog = new JDialog(ClubFrame,"æˆåŠŸé€€ç¤¾",true);
+	private JLabel ExitClubSuccessLabel1 = new JLabel("ç®¡ç†å‘˜æ‰¹å‡†äº†æ‚¨çš„é€€ç¤¾ç”³è¯·ï¼Œ");
+	private JLabel ExitClubSuccessLabel2 = new JLabel("æ‚¨å·²é€€å‡ºæœ¬ç¤¾å›¢!");
+	private JButton ExitClubSuccessSure = new JButton("ç¡®å®š");
+	/*é€€ç¤¾æ‹’ç»æç¤ºçª—å£*/
+	private JDialog ExitClubDefaultDialog = new JDialog(ClubFrame,"ç”³è¯·è¢«æ‹’ç»",true);
+	private JLabel ExitClubDefaultLabel = new JLabel("ç®¡ç†å‘˜æ‹’ç»äº†æ‚¨çš„é€€ç¤¾ç”³è¯·!");
+	private JButton ExitClubDefaultSure = new JButton("ç¡®å®š");
+	/*é”™è¯¯çª—å£ç»„ä»¶ */
+	private JDialog ErrorFrame = new JDialog(LoginFrame,"é”™è¯¯ï¼",true);
 	private JPanel ErrorPanel = new JPanel();
-	private JLabel ErrorLabel = new JLabel("ID¡¢ÃÜÂëÊäÈë´íÎó»òÓÃ»§Ñ¡Ôñ´íÎó!");
-	private JButton ErrorSure = new JButton("È·¶¨");
-	/*Éè¹ÜÀíÔ±ÓÃ»§Ö»ÓĞÈıÃû£ºÉç³¤¼°Á½Ãû¸±Éç³¤*/
-	/*ÆÕÍ¨ÓÃ»§ÊıÁ¿²»È·¶¨*/
-	private String userArray[][]= new String[20][13];// ´æ´¢ÓÃ»§ĞÅÏ¢
-	private String kaopingArray[][] = new String[20][4];//´æ´¢¿¼ÆÀĞÅÏ¢
-	private String ExitClubArray[][] = new String[20][2];//´æ´¢ÍËÉçĞÅÏ¢
-	private String ClubpostArray[][] = new String[20][2];//´æ´¢¹«¸æĞÅÏ¢
+	private JLabel ErrorLabel = new JLabel("IDã€å¯†ç è¾“å…¥é”™è¯¯æˆ–ç”¨æˆ·é€‰æ‹©é”™è¯¯!");
+	private JButton ErrorSure = new JButton("ç¡®å®š");
+	/*è®¾ç®¡ç†å‘˜ç”¨æˆ·åªæœ‰ä¸‰åï¼šç¤¾é•¿åŠä¸¤åå‰¯ç¤¾é•¿*/
+	/*æ™®é€šç”¨æˆ·æ•°é‡ä¸ç¡®å®š*/
+	private String userArray[][]= new String[20][13];// å­˜å‚¨ç”¨æˆ·ä¿¡æ¯
+	private String kaopingArray[][] = new String[20][4];//å­˜å‚¨è€ƒè¯„ä¿¡æ¯
+	private String ExitClubArray[][] = new String[20][2];//å­˜å‚¨é€€ç¤¾ä¿¡æ¯
+	private String ClubpostArray[][] = new String[20][2];//å­˜å‚¨å…¬å‘Šä¿¡æ¯
 	private String liuyanArray[] = new String[20];
-	/*´æ´¢ÉçÍÅĞÅÏ¢µÄÊı×é*/
+	/*å­˜å‚¨ç¤¾å›¢ä¿¡æ¯çš„æ•°ç»„*/
 	private String ClubArray[] = new String[8];
 	public static void main(String args[]) {
 		display a = new display();
 		a.ClubSystem();
 	}
-	//¼ÆÊ±Ë¢ĞÂÀà¼Ì³ĞTimeTaskÀà
+	//è®¡æ—¶åˆ·æ–°ç±»ç»§æ‰¿TimeTaskç±»
 	class NFDFlightDataTimerTask extends TimerTask{ 
 	    @Override 
-	    //´Ë·½·¨Îª¾ßÌåÒª¶¨Ê±²Ù×÷µÄ·½·¨  
+	    //æ­¤æ–¹æ³•ä¸ºå…·ä½“è¦å®šæ—¶æ“ä½œçš„æ–¹æ³•  
 	    public void run() { 
 	     FileRead();
 	     Setliuyan();
 	    } 
 	} 
 	void ClubSystem(){
-		FileRead();//ÎÄ¼ş¶ÁÈ¡
-		init();//³õÊ¼»¯²¼¾Ö
-		monitor();//ÊµÏÖ¼àÌı
+		FileRead();//æ–‡ä»¶è¯»å–
+		init();//åˆå§‹åŒ–å¸ƒå±€
+		monitor();//å®ç°ç›‘å¬
 		NFDFlightDataTimerTask task = new NFDFlightDataTimerTask();
-	      //°²ÅÅÖ¸¶¨µÄÈÎÎñÔÚÖ¸¶¨µÄÊ±¼ä¿ªÊ¼½øĞĞÖØ¸´µÄ¹Ì¶¨ÑÓ³ÙÖ´ĞĞ¡£  
+	      //å®‰æ’æŒ‡å®šçš„ä»»åŠ¡åœ¨æŒ‡å®šçš„æ—¶é—´å¼€å§‹è¿›è¡Œé‡å¤çš„å›ºå®šå»¶è¿Ÿæ‰§è¡Œã€‚  
 	              count.schedule(task,new Date(),100); 
 	}
-	/*¶Ô¸÷´°¿Ú¡¢Ãæ°å½øĞĞ³õÊ¼»¯²¼¾ÖµÈ*/
+	/*å¯¹å„çª—å£ã€é¢æ¿è¿›è¡Œåˆå§‹åŒ–å¸ƒå±€ç­‰*/
 	void init(){
-		/*Ö÷´°¿Ú³õÊ¼»¯*/
-		ClubFrame.setSize(800, 600);//Ö÷´°¿Ú´óĞ¡
-		ClubFrame.setVisible(false);//ÉèÖÃÎª²»¿É¼û
-		ClubFrame.setResizable(false);//´óĞ¡²»¿Éµ÷Õû
+		/*ä¸»çª—å£åˆå§‹åŒ–*/
+		ClubFrame.setSize(800, 600);//ä¸»çª—å£å¤§å°
+		ClubFrame.setVisible(false);//è®¾ç½®ä¸ºä¸å¯è§
+		ClubFrame.setResizable(false);//å¤§å°ä¸å¯è°ƒæ•´
 		ClubFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		ClubFrame.setLocationRelativeTo(null);
-		ClubFrame.setLayout(null);//Ö÷´°¿ÚÊ¹ÓÃnull²¼¾Ö
-		ImageIcon maintubiao = new ImageIcon("Ö÷Í¼±ê.jpg");//ÉèÖÃÏµÍ³Í¼±ê
+		ClubFrame.setLayout(null);//ä¸»çª—å£ä½¿ç”¨nullå¸ƒå±€
+		ImageIcon maintubiao = new ImageIcon("ä¸»å›¾æ ‡.jpg");//è®¾ç½®ç³»ç»Ÿå›¾æ ‡
 		ClubFrame.setIconImage(maintubiao.getImage());
-        /*¹¦ÄÜµ¼º½Ãæ°å*/
-		daohangPanel.setLayout(card1);//Ê¹ÓÃ²ãµşĞÍ×é¼ş
+        /*åŠŸèƒ½å¯¼èˆªé¢æ¿*/
+		daohangPanel.setLayout(card1);//ä½¿ç”¨å±‚å å‹ç»„ä»¶
 		daohangPanel.setOpaque(false);
         putongPanel.setOpaque(false);
         putongPanel.setLayout(null);//null
@@ -345,11 +345,11 @@ public class display {
         daohangPanel.setBounds(0, 100, 150, 500);
         daohangPanel.add("putongPanel",putongPanel);
         daohangPanel.add("guanliPanel",guanliPanel);
-        /*Ê±¼äÃæ°å²¼¾Ö£¬Ã¿ÃëÖÓ¸üĞÂÒ»´Îµ±Ç°Ê±¼äÖØĞÂ¸³Öµ¸øTimeLabel*/
+        /*æ—¶é—´é¢æ¿å¸ƒå±€ï¼Œæ¯ç§’é’Ÿæ›´æ–°ä¸€æ¬¡å½“å‰æ—¶é—´é‡æ–°èµ‹å€¼ç»™TimeLabel*/
         t.scheduleAtFixedRate(new TimerTask() {
         	public void run() {
         	TimeLabel.setText(format.format(new Date(System.currentTimeMillis())));
-        	TimeLabel.setFont(new Font("Time",Font.BOLD, 20));//ÉèÖÃÊ±¼ä±êÇ©×ÖÌå´óĞ¡
+        	TimeLabel.setFont(new Font("Time",Font.BOLD, 20));//è®¾ç½®æ—¶é—´æ ‡ç­¾å­—ä½“å¤§å°
         	}
         	}, 0, 1000);
         TimePanel.add(TimeLabel);
@@ -359,13 +359,13 @@ public class display {
         TimePanel.setLayout(null);
         TimePanel.setBorder(BorderFactory.createRaisedSoftBevelBorder());
         TimePanel.setBounds(150, 0, 650, 100);
-        /*Ö÷ÏÔÊ¾Ãæ°å*/
-        mainPanel.setLayout(card2);//Ê¹ÓÃ²ãµşĞÍ×é¼ş
+        /*ä¸»æ˜¾ç¤ºé¢æ¿*/
+        mainPanel.setLayout(card2);//ä½¿ç”¨å±‚å å‹ç»„ä»¶
 		mainPanel.setOpaque(false);
 		mainPanel.setBorder(BorderFactory.createEtchedBorder());
 		ClubFrame.add(mainPanel);
 		mainPanel.setBounds(150, 100, 650, 500);
-        /*ĞŞ¸ÄÃÜÂëÃæ°å*/
+        /*ä¿®æ”¹å¯†ç é¢æ¿*/
         ModifyPWPanel.setLayout(null);
         OldPWLabel.setFont(new Font("OldPWLabel",Font.BOLD, 15));
         ModifyPWPanel.add(OldPWLabel);
@@ -416,7 +416,7 @@ public class display {
         ModifyPWErrorClose.setFont(new Font("ModifyPWErrorClose",Font.BOLD, 15));
         ModifyPWError.add(ModifyPWErrorClose);
         ModifyPWErrorClose.setBounds(90, 130, 100, 30);
-        /*ÉêÇëÍËÉçÃæ°å*/
+        /*ç”³è¯·é€€ç¤¾é¢æ¿*/
         ExitClubPanel.setLayout(null);
         ExitClubcheck.setFont(new Font("ExitClubcheck",Font.BOLD, 15));
         ExitClubcheck.setContentAreaFilled(false);
@@ -428,8 +428,8 @@ public class display {
         ExitClubPanel.add(ExitClubLabel);
         ExitClubLabel.setBounds(100, 80, 450, 30);
         ExitClubText.setFont(new Font("ExitClubText",Font.PLAIN, 15));
-        ExitClubText.setLineWrap(true);//×Ô¶¯»»ĞĞ
-        ExitClubText.setBorder(BorderFactory.createEtchedBorder());//±ß¿òÉèÖÃ
+        ExitClubText.setLineWrap(true);//è‡ªåŠ¨æ¢è¡Œ
+        ExitClubText.setBorder(BorderFactory.createEtchedBorder());//è¾¹æ¡†è®¾ç½®
         ExitClubPanel.add(ExitClubText);
         ExitClubText.setBounds(100, 120, 450, 250);
         ExitClubSure.setFont(new Font("ExitClubSure",Font.BOLD, 15));
@@ -451,7 +451,7 @@ public class display {
         ExitClubDialogSure.setFont(new Font("ExitClubDialogSure",Font.BOLD, 15));
         ExitClubDialog.add(ExitClubDialogSure);
         ExitClubDialogSure.setBounds(90, 130, 100, 30);
-        /*ÍËÉçÉóºËÃæ°å*/
+        /*é€€ç¤¾å®¡æ ¸é¢æ¿*/
         ExitClubcheckPanel.setLayout(null);
         Applicant.setFont(new Font("Applicant",Font.BOLD, 15));
         ExitClubcheckPanel.add(Applicant);
@@ -466,7 +466,7 @@ public class display {
 		ApplicantionText.setFont(new Font("ApplicantionText",Font.PLAIN, 15));
 		ApplicantionText.setEditable(false);
 		ApplicantionText.setBorder(BorderFactory.createEtchedBorder());
-		ApplicantionText.setLineWrap(true);//×Ô¶¯»»ĞĞ
+		ApplicantionText.setLineWrap(true);//è‡ªåŠ¨æ¢è¡Œ
 		ExitClubcheckPanel.add(ApplicantionText);
 		ApplicantionText.setBounds(100, 170, 450, 200);
 		PassApplicantion.setFont(new Font("PassApplicantion",Font.BOLD, 15));
@@ -476,7 +476,7 @@ public class display {
 		ExitClubcheckPanel.add(RefuseApplicantion);
 		RefuseApplicantion.setBounds(330, 380, 220, 30);
 		mainPanel.add("ExitClubcheckPanel", ExitClubcheckPanel);
-		/*ÍËÉçÅú×¼´°¿Ú*/
+		/*é€€ç¤¾æ‰¹å‡†çª—å£*/
 		ExitClubSuccessDialog.setSize(300, 200);
 		ExitClubSuccessDialog.setVisible(false);
 		ExitClubSuccessDialog.setResizable(false);
@@ -492,7 +492,7 @@ public class display {
 		ExitClubSuccessSure.setFont(new Font("ExitClubSuccessSure",Font.BOLD, 15));
 		ExitClubSuccessDialog.add(ExitClubSuccessSure);
 		ExitClubSuccessSure.setBounds(100, 100, 100, 30);
-		/*ÍËÉç¾Ü¾ø´°¿Ú*/
+		/*é€€ç¤¾æ‹’ç»çª—å£*/
 		ExitClubDefaultDialog.setSize(300, 200);
 		ExitClubDefaultDialog.setVisible(false);
 		ExitClubDefaultDialog.setResizable(false);
@@ -505,7 +505,7 @@ public class display {
 		ExitClubDefaultSure.setFont(new Font("ExitClubDefaultSure",Font.BOLD, 15));
 		ExitClubDefaultDialog.add(ExitClubDefaultSure);
 		ExitClubDefaultSure.setBounds(100, 100, 100, 30);
-        /*Ö÷´°¿ÚÍË³öÌáÊ¾´°¿Ú*/
+        /*ä¸»çª—å£é€€å‡ºæç¤ºçª—å£*/
         ExitFrame.setSize(300, 200);
         ExitFrame.setVisible(false);
         ExitFrame.setResizable(false);
@@ -524,7 +524,7 @@ public class display {
         ExitCancel.setFont(new Font("ExitCancel",Font.BOLD, 15));
         ExitFrame.add(ExitCancel);
         ExitCancel.setBounds(160, 130, 100, 30);
-        /*Ö÷´°¿ÚÍË³öµÇÂ¼ÌáÊ¾´°¿Ú*/
+        /*ä¸»çª—å£é€€å‡ºç™»å½•æç¤ºçª—å£*/
         ExitLoginFrame.setSize(300, 200);
         ExitLoginFrame.setVisible(false);
         ExitLoginFrame.setResizable(false);
@@ -543,7 +543,7 @@ public class display {
         ExitLoginCancel.setFont(new Font("ExitLoginCancel",Font.BOLD, 15));
         ExitLoginFrame.add(ExitLoginCancel);
         ExitLoginCancel.setBounds(160, 130, 100, 30);
-		/*¸öÈËĞÅÏ¢Ãæ°å*/
+		/*ä¸ªäººä¿¡æ¯é¢æ¿*/
         ShowID.setFont(new Font("ShowID",Font.BOLD, 15));
 		PerinfPanel.add(ShowID);
 		ShowID.setBounds(100, 10, 100, 30);
@@ -611,7 +611,7 @@ public class display {
 		PerSave.setBounds(260, 400, 150, 30);
 		PerinfPanel.setLayout(null);
 		mainPanel.add("PerinfPanel", PerinfPanel);
-		/*ÉçÍÅĞÅÏ¢Ãæ°å*/
+		/*ç¤¾å›¢ä¿¡æ¯é¢æ¿*/
 		ClubinfPanel.setLayout(null);
 		ClubName.setFont(new Font("ClubName",Font.BOLD, 15));
 		ClubinfPanel.add(ClubName);
@@ -670,7 +670,7 @@ public class display {
 		ClubinfPanel.add(ClubSave);
 		ClubSave.setBounds(260, 400, 150, 30);
 		mainPanel.add("ClubinfPanel", ClubinfPanel);
-		/*ÉçÍÅ¹«¸æÃæ°å*/
+		/*ç¤¾å›¢å…¬å‘Šé¢æ¿*/
 		ClubpostPanel.setLayout(null);
 		Deletepost.setFont(new Font("Deletepost",Font.BOLD, 15));
 		Deletepost.setContentAreaFilled(false);
@@ -697,7 +697,7 @@ public class display {
 		ShowpostmainbodyText.setFont(new Font("ShowpostmainbodyText",Font.PLAIN, 15));
 		ShowpostmainbodyText.setEditable(false);
 		ShowpostmainbodyText.setBorder(BorderFactory.createEtchedBorder());
-		ShowpostmainbodyText.setLineWrap(true);//×Ô¶¯»»ĞĞ
+		ShowpostmainbodyText.setLineWrap(true);//è‡ªåŠ¨æ¢è¡Œ
 		ClubpostPanel.add(ShowpostmainbodyText);
 		ShowpostmainbodyText.setBounds(100, 170, 450, 200);
 		previouspost.setFont(new Font("previouspost",Font.BOLD, 15));
@@ -713,7 +713,7 @@ public class display {
 		ClubpostPanel.add(nextpost);
 		nextpost.setBounds(400, 380, 150, 30);
 		mainPanel.add("ClubpostPanel", ClubpostPanel);
-        /*·¢²¼¹«¸æÃæ°å*/
+        /*å‘å¸ƒå…¬å‘Šé¢æ¿*/
         issuepostPanel.setLayout(null);
         posttitle.setFont(new Font("posttitle",Font.BOLD, 15));
 		issuepostPanel.add(posttitle);
@@ -726,7 +726,7 @@ public class display {
 		postmainbody.setBounds(100, 130, 450, 30);
 		postmainbodyText.setFont(new Font("postmainbodyText",Font.PLAIN, 15));
 		postmainbodyText.setBorder(BorderFactory.createEtchedBorder());
-		postmainbodyText.setLineWrap(true);//×Ô¶¯»»ĞĞ
+		postmainbodyText.setLineWrap(true);//è‡ªåŠ¨æ¢è¡Œ
 		issuepostPanel.add(postmainbodyText);
 		postmainbodyText.setBounds(100, 170, 450, 200);
 		issuepostSure.setFont(new Font("issuepostSure",Font.BOLD, 15));
@@ -736,17 +736,17 @@ public class display {
 		issuepostPanel.add(issuepostCancel);
 		issuepostCancel.setBounds(330, 380, 220, 30);
 		mainPanel.add("issuepostPanel", issuepostPanel);
-		/*ÁôÑÔÈºÁÄÃæ°å*/
+		/*ç•™è¨€ç¾¤èŠé¢æ¿*/
 		liuyanPanel.setLayout(null);
 		liuyanLabel.setFont(new Font("liuyanLabel",Font.BOLD, 15));
 		liuyanPanel.add(liuyanLabel);
 		liuyanLabel.setBounds(10,10, 640, 30);
 		liuyanArea.setFont(new Font("liuyanArea",Font.BOLD, 15));
 		liuyanArea.setBorder(BorderFactory.createEtchedBorder());
-		liuyanArea.setLineWrap(true);//×Ô¶¯»»ĞĞ
+		liuyanArea.setLineWrap(true);//è‡ªåŠ¨æ¢è¡Œ
 		liuyanArea.setEditable(false);
-		JScrollPane scroll = new JScrollPane(liuyanArea);//Ìí¼Ó¹ö¶¯Ìõ
-		//¹ö¶¯Ìõ×Ô¶¯³öÏÖ
+		JScrollPane scroll = new JScrollPane(liuyanArea);//æ·»åŠ æ»šåŠ¨æ¡
+		//æ»šåŠ¨æ¡è‡ªåŠ¨å‡ºç°
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
 		liuyanPanel.add(scroll);
 		scroll.setBounds(10, 50, 620, 300);
@@ -760,14 +760,14 @@ public class display {
 		liuyanPanel.add(liuyanCancel);
 		liuyanCancel.setBounds(530, 360, 100, 30);
 		mainPanel.add("liuyanPanel", liuyanPanel);
-		/*µÇÂ¼´°¿Ú³õÊ¼»¯*/
-		LoginFrame.setSize(400, 300);//µÇÂ¼´°¿Ú´óĞ¡
-		LoginFrame.setVisible(true);//ÉèÖÃÎª¿É¼û
-		LoginFrame.setResizable(false);//ÉèÖÃÎª´óĞ¡²»¿Éµ÷Õû
+		/*ç™»å½•çª—å£åˆå§‹åŒ–*/
+		LoginFrame.setSize(400, 300);//ç™»å½•çª—å£å¤§å°
+		LoginFrame.setVisible(true);//è®¾ç½®ä¸ºå¯è§
+		LoginFrame.setResizable(false);//è®¾ç½®ä¸ºå¤§å°ä¸å¯è°ƒæ•´
 		LoginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		LoginFrame.setLocationRelativeTo(null);
 		LoginFrame.setLayout(null);
-		ImageIcon Logintubiao = new ImageIcon("µÇÂ½Í¼±ê.png");//ÉèÖÃÏµÍ³Í¼±ê
+		ImageIcon Logintubiao = new ImageIcon("ç™»é™†å›¾æ ‡.png");//è®¾ç½®ç³»ç»Ÿå›¾æ ‡
 		LoginFrame.setIconImage(Logintubiao.getImage());
 		ID.setFont(new Font("ID",Font.BOLD, 15));
 		LoginFrame.add(ID);
@@ -798,9 +798,9 @@ public class display {
 		LoginLabel.setFont(new Font("LoginLabel",Font.BOLD, 15));
 		LoginFrame.add(LoginLabel);
 		LoginLabel.setBounds(50, 220, 400, 20);
-		/*´íÎó´°¿Ú³õÊ¼»¯*/
-		ErrorFrame.setSize(220, 130);//´íÎó´°¿Ú´óĞ¡
-		ErrorFrame.setVisible(false);//ÉèÖÃÎª²»¿É¼û
+		/*é”™è¯¯çª—å£åˆå§‹åŒ–*/
+		ErrorFrame.setSize(220, 130);//é”™è¯¯çª—å£å¤§å°
+		ErrorFrame.setVisible(false);//è®¾ç½®ä¸ºä¸å¯è§
 		ErrorFrame.setResizable(false);
 		ErrorFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		ErrorFrame.setLocationRelativeTo(null);
@@ -810,12 +810,12 @@ public class display {
 		ErrorPanel.add(ErrorSure);
 		ErrorFrame.add(ErrorPanel,BorderLayout.SOUTH);
 	}
-	/*ÉçÔ±ĞÅÏ¢Ãæ°å*/
+	/*ç¤¾å‘˜ä¿¡æ¯é¢æ¿*/
 	void MeminfShow(){
 		MemNum = 0;
 		MeminfPanel.setLayout(null);
 		MeminfTabelObject = new String[userArray.length][9];
-		for(int i=0; i<userArray.length; i++){//µÃµ½ÓÃ»§µÄ9ÏîĞÅÏ¢
+		for(int i=0; i<userArray.length; i++){//å¾—åˆ°ç”¨æˆ·çš„9é¡¹ä¿¡æ¯
 			if(userArray[i][0] != null){
 				MemNum++;
 			MeminfTabelObject[i][0] =  userArray[i][0];
@@ -830,8 +830,8 @@ public class display {
 			}
 		}
 		Meminfmodel = new DefaultTableModel(MeminfTabelObject, MeminfTableHead);
-		MeminfTable = new JTable(Meminfmodel);//½«ĞÅÏ¢Óë±íÍ·×°µ½±íÖĞ
-		/*ÉèÖÃ·ûºÏ´óĞ¡µÄÁĞ¿í*/
+		MeminfTable = new JTable(Meminfmodel);//å°†ä¿¡æ¯ä¸è¡¨å¤´è£…åˆ°è¡¨ä¸­
+		/*è®¾ç½®ç¬¦åˆå¤§å°çš„åˆ—å®½*/
 		MeminfTable.getColumn(MeminfTableHead[0]).setPreferredWidth(75);
 		MeminfTable.getColumn(MeminfTableHead[1]).setPreferredWidth(40);
 		MeminfTable.getColumn(MeminfTableHead[2]).setPreferredWidth(25);
@@ -842,11 +842,11 @@ public class display {
 		MeminfTable.getColumn(MeminfTableHead[7]).setPreferredWidth(45);
 		MeminfTable.getColumn(MeminfTableHead[8]).setPreferredWidth(50);
 		MeminfTable.setRowHeight(25);
-		MeminfTable.setEnabled(false);//²»¿É±à¼­
-		MeminfTable.getTableHeader().setReorderingAllowed(false);//²»¿ÉÕûÁĞÒÆ¶¯   
-		MeminfTable.getTableHeader().setResizingAllowed(false);//²»¿ÉÀ­¶¯±í¸ñ
-		MemNumLabel = new JLabel("±¾ÉçÍÅ¹²ÓĞ  "+MemNum+"  ÈË");
-		JScrollPane Meminftable = new JScrollPane(MeminfTable);//¶¨ÒåÒ»¸ö´ø±íÍ·µÄ±í¸ñ
+		MeminfTable.setEnabled(false);//ä¸å¯ç¼–è¾‘
+		MeminfTable.getTableHeader().setReorderingAllowed(false);//ä¸å¯æ•´åˆ—ç§»åŠ¨   
+		MeminfTable.getTableHeader().setResizingAllowed(false);//ä¸å¯æ‹‰åŠ¨è¡¨æ ¼
+		MemNumLabel = new JLabel("æœ¬ç¤¾å›¢å…±æœ‰  "+MemNum+"  äºº");
+		JScrollPane Meminftable = new JScrollPane(MeminfTable);//å®šä¹‰ä¸€ä¸ªå¸¦è¡¨å¤´çš„è¡¨æ ¼
 		MeminfPanel.add(Meminftable);
 		Meminftable.setBounds(0, 80, 650, 300);
 		MemNumLabel.setFont(new Font("MemNumLabel",Font.BOLD, 15));
@@ -875,11 +875,11 @@ public class display {
 		SaveModify.setBounds(420, 390, 150, 30);
 		mainPanel.add("MeminfPanel", MeminfPanel);
 	}
-	/*¿¼ÆÀÇé¿öÃæ°å*/
+	/*è€ƒè¯„æƒ…å†µé¢æ¿*/
 	void kaopingShow(){
 		kaopingPanel.setLayout(null);
 		kaopingTabelObject = new String[kaopingArray.length][4];
-		for(int i=0; i<kaopingArray.length; i++){//µÃµ½¿¼ÆÀĞÅÏ¢µÄ4ÏîĞÅÏ¢
+		for(int i=0; i<kaopingArray.length; i++){//å¾—åˆ°è€ƒè¯„ä¿¡æ¯çš„4é¡¹ä¿¡æ¯
 			if(kaopingArray[i][0] != null){
 			kaopingTabelObject[i][0] =  kaopingArray[i][0];
 			kaopingTabelObject[i][1] =  kaopingArray[i][1];
@@ -888,17 +888,17 @@ public class display {
 			}
 		}
 		kaopingmodel = new DefaultTableModel(kaopingTabelObject, kaopingTableHead);
-		kaopingTable = new JTable(kaopingmodel);//½«ĞÅÏ¢Óë±íÍ·×°µ½±íÖĞ
-		/*ÉèÖÃ·ûºÏ´óĞ¡µÄÁĞ¿í*/
+		kaopingTable = new JTable(kaopingmodel);//å°†ä¿¡æ¯ä¸è¡¨å¤´è£…åˆ°è¡¨ä¸­
+		/*è®¾ç½®ç¬¦åˆå¤§å°çš„åˆ—å®½*/
 		kaopingTable.getColumn(kaopingTableHead[0]).setPreferredWidth(75);
 		kaopingTable.getColumn(kaopingTableHead[1]).setPreferredWidth(50);
 		kaopingTable.getColumn(kaopingTableHead[2]).setPreferredWidth(100);
 		kaopingTable.getColumn(kaopingTableHead[3]).setPreferredWidth(450);
 		kaopingTable.setRowHeight(25);
-		kaopingTable.setEnabled(false);//²»¿É±à¼­
-		kaopingTable.getTableHeader().setReorderingAllowed(false);//²»¿ÉÕûÁĞÒÆ¶¯   
-		kaopingTable.getTableHeader().setResizingAllowed(false);//²»¿ÉÀ­¶¯±í¸ñ
-		JScrollPane kaopingtable = new JScrollPane(kaopingTable);//¶¨ÒåÒ»¸ö´ø±íÍ·µÄ±í¸ñ
+		kaopingTable.setEnabled(false);//ä¸å¯ç¼–è¾‘
+		kaopingTable.getTableHeader().setReorderingAllowed(false);//ä¸å¯æ•´åˆ—ç§»åŠ¨   
+		kaopingTable.getTableHeader().setResizingAllowed(false);//ä¸å¯æ‹‰åŠ¨è¡¨æ ¼
+		JScrollPane kaopingtable = new JScrollPane(kaopingTable);//å®šä¹‰ä¸€ä¸ªå¸¦è¡¨å¤´çš„è¡¨æ ¼
 		kaopingPanel.add(kaopingtable);
 		kaopingtable.setBounds(0, 0, 650, 350);
 		givekaoping.setFont(new Font("givekaoping",Font.BOLD, 15));
@@ -911,9 +911,9 @@ public class display {
 		Savekaoping.setBounds(260, 400, 150, 30);
 		mainPanel.add("kaopingPanel", kaopingPanel);
 	}
-		/*³õÊ¼ÎÄ±¾¿òÏÔÊ¾ĞÅÏ¢*/
+		/*åˆå§‹æ–‡æœ¬æ¡†æ˜¾ç¤ºä¿¡æ¯*/
 		void TextShow(){
-			//´ÓÊı×éÌáÈ¡ÉçÍÅĞÅÏ¢²¢ÉèÖÃµ½¶ÔÓ¦ÎÄ±¾¿òÍ¬Ê±ÉèÖÃÎª²»¿É±à¼­
+			//ä»æ•°ç»„æå–ç¤¾å›¢ä¿¡æ¯å¹¶è®¾ç½®åˆ°å¯¹åº”æ–‡æœ¬æ¡†åŒæ—¶è®¾ç½®ä¸ºä¸å¯ç¼–è¾‘
 			ClubNameText.setText(ClubArray[0]);
 			ClubNameText.setEditable(false);
 			SetTimeText.setText(ClubArray[1]);
@@ -934,13 +934,13 @@ public class display {
 			ShowIDText.setEditable(false);
 			PerNameText.setText(userArray[Num][2]);
 			PerNameText.setEditable(false);
-			if(userArray[Num][3].equals("ÄĞ")){
+			if(userArray[Num][3].equals("ç”·")){
 				Male.setSelected(true);
 				Female.setSelected(false);
 				Male.setEnabled(false);
 				Female.setEnabled(false);
 			}
-			else if(userArray[Num][3].equals("Å®")){
+			else if(userArray[Num][3].equals("å¥³")){
 				Male.setSelected(false);
 				Female.setSelected(true);
 				Male.setEnabled(false);
@@ -960,8 +960,8 @@ public class display {
 			DutyText.setEditable(false);
 			WelcomeKind1 = userArray[Num][8]+" "+userArray[Num][9];
 			WelcomeKind2 = userArray[Num][2];
-			Clubwelcome = ClubArray[0] + "»¶Ó­Äú";
-			/*¼òÂÔĞÅÏ¢Ãæ°å*/
+			Clubwelcome = ClubArray[0] + "æ¬¢è¿æ‚¨";
+			/*ç®€ç•¥ä¿¡æ¯é¢æ¿*/
 			simplePanel.removeAll();
 			simplePanel.setOpaque(false);
 			simplePanel.setBorder(BorderFactory.createRaisedBevelBorder());
@@ -979,7 +979,7 @@ public class display {
 			WelcomeLabel3.setBounds(30, 60, 150, 20);
 			ClubFrame.add(simplePanel);
 			simplePanel.setBounds(0, 0, 150, 100);
-			/*Ê±¼ä¡¢ÉçÍÅ»¶Ó­Ãæ°å*/
+			/*æ—¶é—´ã€ç¤¾å›¢æ¬¢è¿é¢æ¿*/
 			ClubwelcomeLabel = new JLabel(Clubwelcome);
 			ClubwelcomeLabel.setFont(new Font("WelcomeLabel3",Font.BOLD, 30));
 			TimePanel.add(ClubwelcomeLabel);
@@ -997,11 +997,11 @@ public class display {
 			ClubCharge3Text.setText(ClubArray[7]);	
 			ShowIDText.setText(userArray[Num][0]);
 			PerNameText.setText(userArray[Num][2]);
-			if(userArray[Num][3].equals("ÄĞ")){
+			if(userArray[Num][3].equals("ç”·")){
 				Male.setSelected(true);
 				Female.setSelected(false);			
 			}
-			else if(userArray[Num][3].equals("Å®")){
+			else if(userArray[Num][3].equals("å¥³")){
 				Male.setSelected(false);
 				Female.setSelected(true);
 			}
@@ -1012,7 +1012,7 @@ public class display {
 			DepartmentText.setText(userArray[Num][8]);
 			DutyText.setText(userArray[Num][9]);
 		}
-		/*ÍËÉçĞÅÏ¢ ¹«¸æĞÅÏ¢setText·½·¨*/
+		/*é€€ç¤¾ä¿¡æ¯ å…¬å‘Šä¿¡æ¯setTextæ–¹æ³•*/
 		void SetText(){
 			if(ExitClubArray[Exitflag][0] != null){
 			ApplicantText.setText(ExitClubArray[Exitflag][0]);
@@ -1033,7 +1033,7 @@ public class display {
 			ShowpostmainbodyText.setText(ClubpostArray[Postflag][1]);
 			}
 		}
-		/*ÁôÑÔÈºÁÄÏÔÊ¾ÇøĞ´Èë·½·¨*/
+		/*ç•™è¨€ç¾¤èŠæ˜¾ç¤ºåŒºå†™å…¥æ–¹æ³•*/
 		void Setliuyan(){
 			liuyanArea.setText(null);
 			String s;
@@ -1047,20 +1047,20 @@ public class display {
 			liuyanArea.setText(s);
 		}
 	}	
-		/*¹ÜÀíÔ±ÓÃ»§È¨ÏŞ*/
+		/*ç®¡ç†å‘˜ç”¨æˆ·æƒé™*/
 		void GuanliPower(){
 			ExitClubcheck.setVisible(true);
 			ClubModify.setEnabled(true);
 			Deletepost.setVisible(true);
 			issuepost.setVisible(true);
 			}
-		/*³õÊ¼¸³Öµº¯Êı*/
+		/*åˆå§‹èµ‹å€¼å‡½æ•°*/
 		void initpower(){
 			ExitClubcheck.setVisible(false);
 			ClubModify.setEnabled(false);
 			Deletepost.setVisible(false);
 			issuepost.setVisible(false);
-			MeminfTable.setEnabled(false);//²»¿É±à¼­
+			MeminfTable.setEnabled(false);//ä¸å¯ç¼–è¾‘
 			AddMem.setVisible(false);
 			DeleteMem.setVisible(false);
 			SaveModify.setVisible(false);
@@ -1070,9 +1070,9 @@ public class display {
 			WelcomeLabel2.setText(null);
 			WelcomeLabel3.setText(null);
 			}
-		/*°´Å¥¼àÌıÆ÷¼¯ºÏº¯Êı*/
+		/*æŒ‰é’®ç›‘å¬å™¨é›†åˆå‡½æ•°*/
 		void monitor(){
-		/*µÇÂ¼´°¿ÚµÇÂ¼°´Å¥¼àÌıÆ÷*/
+		/*ç™»å½•çª—å£ç™»å½•æŒ‰é’®ç›‘å¬å™¨*/
 		LoginButton.addActionListener(new ActionListener(){
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -1088,12 +1088,12 @@ public class display {
 						FileRead();
 						LoginFrame.setVisible(false);
 						ClubFrame.setVisible(true);
-						if(userArray[i][11].equals("t")&&//¸ÃÓÃ»§Ìá½»ÁËÍËÉçÉêÇë
-								userArray[i][12].equals("f")){//¸ÃÉçÔ±ÒÑ²»ÊÇ±¾ÉçÍÅ³ÉÔ±
+						if(userArray[i][11].equals("t")&&//è¯¥ç”¨æˆ·æäº¤äº†é€€ç¤¾ç”³è¯·
+								userArray[i][12].equals("f")){//è¯¥ç¤¾å‘˜å·²ä¸æ˜¯æœ¬ç¤¾å›¢æˆå‘˜
 								ExitClubSuccessDialog.setVisible(true);
 							}
-						if(userArray[i][11].equals("t")&&//¸ÃÓÃ»§Ìá½»ÁËÍËÉçÉêÇë
-								userArray[i][12].equals("t")){//¸ÃÉçÔ±ÈÔÈ»ÊÇ±¾ÉçÍÅ³ÉÔ±
+						if(userArray[i][11].equals("t")&&//è¯¥ç”¨æˆ·æäº¤äº†é€€ç¤¾ç”³è¯·
+								userArray[i][12].equals("t")){//è¯¥ç¤¾å‘˜ä»ç„¶æ˜¯æœ¬ç¤¾å›¢æˆå‘˜
 								ExitClubDefaultDialog.setVisible(true);
 							}
 						TextShow();
@@ -1118,12 +1118,12 @@ public class display {
 							FileRead();
 							LoginFrame.setVisible(false);
 							ClubFrame.setVisible(true);
-							if(userArray[i][11].equals("t")&&//¸ÃÓÃ»§Ìá½»ÁËÍËÉçÉêÇë
-									userArray[i][12].equals("f")){//¸ÃÉçÔ±ÒÑ²»ÊÇ±¾ÉçÍÅ³ÉÔ±
+							if(userArray[i][11].equals("t")&&//è¯¥ç”¨æˆ·æäº¤äº†é€€ç¤¾ç”³è¯·
+									userArray[i][12].equals("f")){//è¯¥ç¤¾å‘˜å·²ä¸æ˜¯æœ¬ç¤¾å›¢æˆå‘˜
 									ExitClubSuccessDialog.setVisible(true);
 								}
-							if(userArray[i][11].equals("t")&&//¸ÃÓÃ»§Ìá½»ÁËÍËÉçÉêÇë
-									userArray[i][12].equals("t")){//¸ÃÉçÔ±ÈÔÈ»ÊÇ±¾ÉçÍÅ³ÉÔ±
+							if(userArray[i][11].equals("t")&&//è¯¥ç”¨æˆ·æäº¤äº†é€€ç¤¾ç”³è¯·
+									userArray[i][12].equals("t")){//è¯¥ç¤¾å‘˜ä»ç„¶æ˜¯æœ¬ç¤¾å›¢æˆå‘˜
 									ExitClubDefaultDialog.setVisible(true);
 								}
 							TextShow();
@@ -1139,7 +1139,7 @@ public class display {
 				else ErrorFrame.setVisible(true);
 		    }	
 		});
-		/*µÇÂ¼´°¿ÚÖØĞÂÊäÈë°´Å¥¼àÌıÆ÷*/
+		/*ç™»å½•çª—å£é‡æ–°è¾“å…¥æŒ‰é’®ç›‘å¬å™¨*/
 		ResetButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				IDText.setText(null);
@@ -1147,16 +1147,16 @@ public class display {
 				LoginKind.clearSelection();
 			}
 		});
-		/*´íÎó´°¿ÚÈ·¶¨°´Å¥¼àÌıÆ÷*/
+		/*é”™è¯¯çª—å£ç¡®å®šæŒ‰é’®ç›‘å¬å™¨*/
 		ErrorSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ErrorFrame.dispose();
 			}
 		});
-		/*ÍËÉçÅú×¼´°¿ÚÈ·¶¨°´Å¥¼àÌıÆ÷*/
+		/*é€€ç¤¾æ‰¹å‡†çª—å£ç¡®å®šæŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubSuccessSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				for(int i=0; i<userArray[Num].length; i++){//°Ñ¸ÃÓÃ»§ĞÅÏ¢È«²¿É¾³ı
+				for(int i=0; i<userArray[Num].length; i++){//æŠŠè¯¥ç”¨æˆ·ä¿¡æ¯å…¨éƒ¨åˆ é™¤
 					userArray[Num][i] = null;
 				}
 				yonghuFileWrite();
@@ -1164,60 +1164,60 @@ public class display {
 				ClubFrame.dispose();
 			}
 		});
-		/*ÍËÉç¾Ü¾ø´°¿ÚÈ·¶¨°´Å¥¼àÌıÆ÷*/
+		/*é€€ç¤¾æ‹’ç»çª—å£ç¡®å®šæŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubDefaultSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				userArray[Num][11] = "f";//ÓÃ»§Ìá½»ÍËÉçÉêÇë¸ÄÎªÎ´Ìá½»
+				userArray[Num][11] = "f";//ç”¨æˆ·æäº¤é€€ç¤¾ç”³è¯·æ”¹ä¸ºæœªæäº¤
 				yonghuFileWrite();
 				FileRead();
 				ExitClubDefaultDialog.dispose();
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë°´Å¥¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç æŒ‰é’®ç›‘å¬å™¨*/
 		ModifyPassword.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				card2.show(mainPanel, "ModifyPWPanel");
 			}
 		});
-		/*ÉêÇëÍËÉç°´Å¥¼àÌıÆ÷*/
+		/*ç”³è¯·é€€ç¤¾æŒ‰é’®ç›‘å¬å™¨*/
 		ExitClub.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				card2.show(mainPanel, "ExitClubPanel");
 			}
 		});
-		/*ÍË³öµÇÂ¼¼àÌıÆ÷*/
+		/*é€€å‡ºç™»å½•ç›‘å¬å™¨*/
 		ExitLogin.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitLoginFrame.setVisible(true);
 			}
 		});
-		/*ÍË³öÏµÍ³¼àÌıÆ÷*/
+		/*é€€å‡ºç³»ç»Ÿç›‘å¬å™¨*/
 		ExitSystem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitFrame.setVisible(true);
 				
 			}
 		});
-		/*ÍË³öÖ÷´°¿Ú¼àÌıÆ÷*/
+		/*é€€å‡ºä¸»çª—å£ç›‘å¬å™¨*/
 		ClubFrame.addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
 				ExitFrame.setVisible(true);
 			}
 		});
-		/*ÍË³öÏµÍ³ÌáÊ¾´°¿ÚÈ·ÈÏ°´Å¥¼àÌıÆ÷*/
+		/*é€€å‡ºç³»ç»Ÿæç¤ºçª—å£ç¡®è®¤æŒ‰é’®ç›‘å¬å™¨*/
 		ExitSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitFrame.dispose();
 				ClubFrame.dispose();
 			}
 		});
-		/*ÍË³öÏµÍ³ÌáÊ¾´°¿ÚÈ¡Ïû°´Å¥¼àÌıÆ÷*/
+		/*é€€å‡ºç³»ç»Ÿæç¤ºçª—å£å–æ¶ˆæŒ‰é’®ç›‘å¬å™¨*/
 		ExitCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitFrame.dispose();
 			}
 		});
-		/*ÍË³öµÇÂ¼ÌáÊ¾´°¿ÚÈ·ÈÏ°´Å¥¼àÌıÆ÷*/
+		/*é€€å‡ºç™»å½•æç¤ºçª—å£ç¡®è®¤æŒ‰é’®ç›‘å¬å™¨*/
 		ExitLoginSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitLoginFrame.dispose();
@@ -1226,17 +1226,17 @@ public class display {
 				PassWordText.setText(null);
 				LoginKind.clearSelection();	
 				LoginFrame.setVisible(true);
-				/*ÍË³öµÇÂ¼Ôò¼ÇÂ¼ÓÃ»§ĞÅÏ¢µÄ±ê¼ÇÇåÁã£¬»¶Ó­±êÇ©ÇåÁã*/
+				/*é€€å‡ºç™»å½•åˆ™è®°å½•ç”¨æˆ·ä¿¡æ¯çš„æ ‡è®°æ¸…é›¶ï¼Œæ¬¢è¿æ ‡ç­¾æ¸…é›¶*/
 				initpower();
 			}
 		});
-		/*ÍË³öµÇÂ¼ÌáÊ¾´°¿ÚÈ¡Ïû°´Å¥¼àÌıÆ÷*/
+		/*é€€å‡ºç™»å½•æç¤ºçª—å£å–æ¶ˆæŒ‰é’®ç›‘å¬å™¨*/
 		ExitLoginCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitLoginFrame.dispose();
 			}
 		});
-		/*¸öÈËĞÅÏ¢°´Å¥¼àÌıÆ÷*/
+		/*ä¸ªäººä¿¡æ¯æŒ‰é’®ç›‘å¬å™¨*/
 		Perinf.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
@@ -1244,7 +1244,7 @@ public class display {
 				card2.show(mainPanel, "PerinfPanel");
 			}
 		});
-		/*ÉçÍÅĞÅÏ¢°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å›¢ä¿¡æ¯æŒ‰é’®ç›‘å¬å™¨*/
 		Clubinf.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
@@ -1252,14 +1252,14 @@ public class display {
 				card2.show(mainPanel, "ClubinfPanel");
 			}
 		});
-		/*ÉçÔ±ĞÅÏ¢°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å‘˜ä¿¡æ¯æŒ‰é’®ç›‘å¬å™¨*/
 		Meminf.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
 				MeminfPanel.removeAll();
 				MeminfShow();
 				if(userArray[Num][10].equals("1")){
-					MeminfTable.setEnabled(true);//¿É±à¼­
+					MeminfTable.setEnabled(true);//å¯ç¼–è¾‘
 					AddMem.setVisible(true);
 					DeleteMem.setVisible(true);
 					SaveModify.setVisible(true);
@@ -1267,7 +1267,7 @@ public class display {
 				card2.show(mainPanel, "MeminfPanel");
 			}
 		});
-		/*¿¼ÆÀÇé¿ö°´Å¥¼àÌıÆ÷*/
+		/*è€ƒè¯„æƒ…å†µæŒ‰é’®ç›‘å¬å™¨*/
 		kaoping.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
@@ -1279,7 +1279,7 @@ public class display {
 				card2.show(mainPanel, "kaopingPanel");
 			}
 		});
-		/*ÉçÍÅ¹«¸æ°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å›¢å…¬å‘ŠæŒ‰é’®ç›‘å¬å™¨*/
 		Clubpost.addActionListener(new ActionListener(){
 			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
@@ -1298,7 +1298,7 @@ public class display {
 				card2.show(mainPanel, "ClubpostPanel");
 			}
 		});
-		/*ÉçÍÅ¹«¸æÃæ°åµ±Ç°Ò³ÊıÑ¡Ôñ¿ò¼àÌıÆ÷*/
+		/*ç¤¾å›¢å…¬å‘Šé¢æ¿å½“å‰é¡µæ•°é€‰æ‹©æ¡†ç›‘å¬å™¨*/
 		postnumbox.addPopupMenuListener(new PopupMenuListener(){    
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {  
                 int x=(int) postnumbox.getSelectedItem();  
@@ -1314,7 +1314,7 @@ public class display {
 				
 			}   
         }); 
-		/*ÁôÑÔÈºÁÄ°´Å¥¼àÌıÆ÷*/
+		/*ç•™è¨€ç¾¤èŠæŒ‰é’®ç›‘å¬å™¨*/
 		liuyan.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
@@ -1322,7 +1322,7 @@ public class display {
 				card2.show(mainPanel, "liuyanPanel");
 			}
 		});
-		/*ÉçÍÅ¹«¸æÃæ°åÏÂÒ»Ìõ¼àÌıÆ÷*/
+		/*ç¤¾å›¢å…¬å‘Šé¢æ¿ä¸‹ä¸€æ¡ç›‘å¬å™¨*/
 		nextpost.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ShowposttitleText.setText(null);
@@ -1337,7 +1337,7 @@ public class display {
 				}
 			}
 		});
-		/*ÉçÍÅ¹«¸æÃæ°åÉÏÒ»Ìõ¼àÌıÆ÷*/
+		/*ç¤¾å›¢å…¬å‘Šé¢æ¿ä¸Šä¸€æ¡ç›‘å¬å™¨*/
 		previouspost.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ShowposttitleText.setText(null);
@@ -1347,7 +1347,7 @@ public class display {
 				SetText();
 			}
 		});
-		/*É¾³ı¹«¸æ°´Å¥¼àÌıÆ÷*/
+		/*åˆ é™¤å…¬å‘ŠæŒ‰é’®ç›‘å¬å™¨*/
 		Deletepost.addActionListener(new ActionListener(){
 			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
@@ -1372,19 +1372,19 @@ public class display {
 				SetText();
 			}
 		});
-		/*·¢²¼ĞÂ¹«¸æ°´Å¥¼àÌıÆ÷*/
+		/*å‘å¸ƒæ–°å…¬å‘ŠæŒ‰é’®ç›‘å¬å™¨*/
 		issuepost.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				card2.show(mainPanel, "issuepostPanel");
 			}
 		});
-		/*·µ»Ø°´Å¥¼àÌıÆ÷*/
+		/*è¿”å›æŒ‰é’®ç›‘å¬å™¨*/
 		last.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				card1.show(daohangPanel, "putongPanel");
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë´°¿ÚÈ·ÈÏĞŞ¸Ä°´Å¥¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç çª—å£ç¡®è®¤ä¿®æ”¹æŒ‰é’®ç›‘å¬å™¨*/
 		ModifyPWSure.addActionListener(new ActionListener(){
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -1400,7 +1400,7 @@ public class display {
 				
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë´°¿ÚÃÜÂëÖØÖÃ°´Å¥¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç çª—å£å¯†ç é‡ç½®æŒ‰é’®ç›‘å¬å™¨*/
 		ModifyPWCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				OldPWLabelText.setText(null);
@@ -1408,7 +1408,7 @@ public class display {
 				ConfirmPWLabelText.setText(null);
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë´íÎó´°¿Ú¹Ø±Õ°´Å¥¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç é”™è¯¯çª—å£å…³é—­æŒ‰é’®ç›‘å¬å™¨*/
 		ModifyPWErrorClose.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				OldPWLabelText.setText(null);
@@ -1417,7 +1417,7 @@ public class display {
 				ModifyPWError.dispose();
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë´íÎó´°¿ÚÍË³ö¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç é”™è¯¯çª—å£é€€å‡ºç›‘å¬å™¨*/
 		ModifyPWError.addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
 				OldPWLabelText.setText(null);
@@ -1426,7 +1426,7 @@ public class display {
 				ModifyPWError.dispose();
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë³É¹¦´°¿Ú¹Ø±Õ°´Å¥¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç æˆåŠŸçª—å£å…³é—­æŒ‰é’®ç›‘å¬å™¨*/
 		ModifyPWSuccessClose.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ModifyPWSuccess.dispose();
@@ -1435,7 +1435,7 @@ public class display {
 				ConfirmPWLabelText.setText(null);
 			}
 		});
-		/*ĞŞ¸ÄÃÜÂë³É¹¦´°¿ÚÍË³ö¼àÌıÆ÷*/
+		/*ä¿®æ”¹å¯†ç æˆåŠŸçª—å£é€€å‡ºç›‘å¬å™¨*/
 		ModifyPWSuccess.addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
 				ModifyPWSuccess.dispose();
@@ -1444,7 +1444,7 @@ public class display {
 				ConfirmPWLabelText.setText(null);
 			}
 		});
-		/*ÉêÇëÍËÉçÃæ°åÍËÉçÉóºË°´Å¥¼àÌıÆ÷*/
+		/*ç”³è¯·é€€ç¤¾é¢æ¿é€€ç¤¾å®¡æ ¸æŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubcheck.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				FileRead();
@@ -1456,19 +1456,19 @@ public class display {
 				card2.show(mainPanel, "ExitClubcheckPanel");
 			}
 		});
-		/*ÉêÇëÍËÉçÃæ°åÌá½»ÉêÇë°´Å¥¼àÌıÆ÷*/
+		/*ç”³è¯·é€€ç¤¾é¢æ¿æäº¤ç”³è¯·æŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				if((ExitClubText.getText().length() >= 15)&&
 				(ExitClubText.getText().length() <= 100))
 				{
 				String s1 = userArray[Num][2];
-				long now = System.currentTimeMillis();// ÅÅĞòÇ°È¡µÃµ±Ç°Ê±¼ä  
+				long now = System.currentTimeMillis();// æ’åºå‰å–å¾—å½“å‰æ—¶é—´  
 			    Calendar c = Calendar.getInstance();  
 			    c.setTimeInMillis(now);
-			    String s2 = ("ÉêÇëÊ±¼ä:" + c.get(Calendar.YEAR) + "Äê" 
-			     + (c.get(Calendar.MONTH) + 1) + "ÔÂ" + c.get(Calendar.DATE)  
-			     + "ÈÕ"+ (c.get(Calendar.HOUR)+12) + "Ê±" + c.get(Calendar.MINUTE)+"·Ö");
+			    String s2 = ("ç”³è¯·æ—¶é—´:" + c.get(Calendar.YEAR) + "å¹´" 
+			     + (c.get(Calendar.MONTH) + 1) + "æœˆ" + c.get(Calendar.DATE)  
+			     + "æ—¥"+ (c.get(Calendar.HOUR)+12) + "æ—¶" + c.get(Calendar.MINUTE)+"åˆ†");
 			    String s3 = ExitClubText.getText()+" "+s2;
 			    int i = 0;
 			    while(ExitClubArray[i][0] != null){
@@ -1476,32 +1476,32 @@ public class display {
 			    }
 			        ExitClubArray[i][0] = s1;
 			        ExitClubArray[i][1] = s3;
-				userArray[Num][11] = "t";//¸ÃÓÃ»§ÒÑÌá½»ÍËÉçÉêÇë
-				yonghuFileWrite();//Ìá½»ĞÅÏ¢Ğ´Èë
-				ExitClubinfWrite();//ÍËÉçĞÅÏ¢Ğ´Èë
+				userArray[Num][11] = "t";//è¯¥ç”¨æˆ·å·²æäº¤é€€ç¤¾ç”³è¯·
+				yonghuFileWrite();//æäº¤ä¿¡æ¯å†™å…¥
+				ExitClubinfWrite();//é€€ç¤¾ä¿¡æ¯å†™å…¥
 				ExitClubDialog.setVisible(true);
 				ExitClubText.setText(null);
 				}
 			}
 		});
-		/*ÉêÇëÍËÉçÃæ°åÈ¡ÏûÉêÇë°´Å¥¼àÌıÆ÷*/
+		/*ç”³è¯·é€€ç¤¾é¢æ¿å–æ¶ˆç”³è¯·æŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitClubText.setText(null);
 			}
 		});
-		/*ÉêÇëÍËÉçÃæ°åÌá½»³É¹¦´°¿ÚÈ·¶¨°´Å¥¼àÌıÆ÷*/
+		/*ç”³è¯·é€€ç¤¾é¢æ¿æäº¤æˆåŠŸçª—å£ç¡®å®šæŒ‰é’®ç›‘å¬å™¨*/
 		ExitClubDialogSure.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ExitClubDialog.dispose();
 			}
 		});
-		/*ÍËÉçÉóºËÃæ°åÅú×¼ÉêÇë°´Å¥¼àÌıÆ÷*/
+		/*é€€ç¤¾å®¡æ ¸é¢æ¿æ‰¹å‡†ç”³è¯·æŒ‰é’®ç›‘å¬å™¨*/
 		PassApplicantion.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				for(int i=0; i<userArray.length; i++){
 					if(ApplicantText.getText().equals(userArray[i][2])){
-						userArray[i][12] = "f";//f±íÊ¾¸ÃÓÃ»§ÒÑ²»ÔÚ¸ÃÉçÍÅ
+						userArray[i][12] = "f";//fè¡¨ç¤ºè¯¥ç”¨æˆ·å·²ä¸åœ¨è¯¥ç¤¾å›¢
 						yonghuFileWrite();
 						break;
 					}
@@ -1511,7 +1511,7 @@ public class display {
 				SetText();
 			}
 		});
-		/*ÍËÉçÉóºËÃæ°å¾Ü¾øÉêÇë°´Å¥¼àÌıÆ÷*/
+		/*é€€ç¤¾å®¡æ ¸é¢æ¿æ‹’ç»ç”³è¯·æŒ‰é’®ç›‘å¬å™¨*/
 		RefuseApplicantion.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ApplicantText.setText(null);
@@ -1519,7 +1519,7 @@ public class display {
 				SetText();
 			}
 		});
-		/*¸öÈËĞÅÏ¢´°¿ÚĞŞ¸Ä°´Å¥¼àÌıÆ÷*/
+		/*ä¸ªäººä¿¡æ¯çª—å£ä¿®æ”¹æŒ‰é’®ç›‘å¬å™¨*/
 		PerModify.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				PerSave.setEnabled(true);
@@ -1536,7 +1536,7 @@ public class display {
 				PerModify.setEnabled(false);
 			}
 		});
-		/*¸öÈËĞÅÏ¢´°¿Ú±£´æ°´Å¥¼àÌıÆ÷*/
+		/*ä¸ªäººä¿¡æ¯çª—å£ä¿å­˜æŒ‰é’®ç›‘å¬å™¨*/
 		PerSave.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				userArray[Num][0] = IDText.getText();
@@ -1547,8 +1547,8 @@ public class display {
 				userArray[Num][7] = JoinTimeText.getText();
 				userArray[Num][8] = DepartmentText.getText();
 				userArray[Num][9] = DutyText.getText();
-				if(Male.isSelected())userArray[Num][3] = "ÄĞ";
-				else if(Female.isSelected())userArray[Num][3] = "Å®";
+				if(Male.isSelected())userArray[Num][3] = "ç”·";
+				else if(Female.isSelected())userArray[Num][3] = "å¥³";
 				yonghuFileWrite();
 				ShowIDText.setEditable(false);			
 				PerNameText.setEditable(false);	
@@ -1564,7 +1564,7 @@ public class display {
 				PerModify.setEnabled(true);
 			}
 		});
-		/*ÉçÍÅĞÅÏ¢´°¿ÚĞŞ¸Ä°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å›¢ä¿¡æ¯çª—å£ä¿®æ”¹æŒ‰é’®ç›‘å¬å™¨*/
 		ClubModify.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ClubSave.setEnabled(true);
@@ -1579,7 +1579,7 @@ public class display {
 				ClubModify.setEnabled(false);
 			}
 		});
-		/*ÉçÍÅĞÅÏ¢´°¿Ú±£´æ°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å›¢ä¿¡æ¯çª—å£ä¿å­˜æŒ‰é’®ç›‘å¬å™¨*/
 		ClubSave.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				ClubArray[0] = ClubNameText.getText();
@@ -1604,32 +1604,32 @@ public class display {
 				ClubSave.setEnabled(false);
 			}
 		});
-		/*ÉçÔ±ĞÅÏ¢Ãæ°å²éÕÒÉçÔ±°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å‘˜ä¿¡æ¯é¢æ¿æŸ¥æ‰¾ç¤¾å‘˜æŒ‰é’®ç›‘å¬å™¨*/
 		SearchMem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 	          String s = SearchNameText.getText();
 	          int flag = 0;
 	          for(int i=0; i<MeminfTable.getRowCount(); i++){
-	        	  if(s.equals(Meminfmodel.getValueAt(i, 0))){//µÚi+1ĞĞµÚ1ÁĞ
-	        		  MeminfTable.setRowSelectionInterval(i,i);//ÉèÖÃÊ¹µÚi+1ĞĞ¸ßÁÁ
+	        	  if(s.equals(Meminfmodel.getValueAt(i, 0))){//ç¬¬i+1è¡Œç¬¬1åˆ—
+	        		  MeminfTable.setRowSelectionInterval(i,i);//è®¾ç½®ä½¿ç¬¬i+1è¡Œé«˜äº®
 	        		  flag = 1;
 	        		  break;
 	        	  }
 	          }
-	          if(flag == 0)MeminfTable.clearSelection();//Çå³ıÑ¡ÔñĞÅÏ¢
+	          if(flag == 0)MeminfTable.clearSelection();//æ¸…é™¤é€‰æ‹©ä¿¡æ¯
 			}
 		});
-		/*ÉçÔ±ĞÅÏ¢Ãæ°åÌí¼ÓÉçÔ±°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å‘˜ä¿¡æ¯é¢æ¿æ·»åŠ ç¤¾å‘˜æŒ‰é’®ç›‘å¬å™¨*/
 		AddMem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Meminfmodel.addRow(new Object[]{" "});
 			}
 		});
-		/*ÉçÔ±ĞÅÏ¢Ãæ°åÉ¾³ıÉçÔ±°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å‘˜ä¿¡æ¯é¢æ¿åˆ é™¤ç¤¾å‘˜æŒ‰é’®ç›‘å¬å™¨*/
 		DeleteMem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				int selectRows[] = MeminfTable.getSelectedRows();
-				if(selectRows.length > 0){//ÈôÈ·ÊµÑ¡ÔñÁË±í¸ñµÄÄ³¼¸ĞĞ
+				if(selectRows.length > 0){//è‹¥ç¡®å®é€‰æ‹©äº†è¡¨æ ¼çš„æŸå‡ è¡Œ
 					for(int i=0; i<selectRows.length; i++){
 						if(selectRows[i] > -1)
 				Meminfmodel.removeRow(selectRows[0]);
@@ -1637,7 +1637,7 @@ public class display {
 				}
 			}
 		});
-		/*ÉçÔ±ĞÅÏ¢Ãæ°å±£´æĞŞ¸Ä°´Å¥¼àÌıÆ÷*/
+		/*ç¤¾å‘˜ä¿¡æ¯é¢æ¿ä¿å­˜ä¿®æ”¹æŒ‰é’®ç›‘å¬å™¨*/
 		SaveModify.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				MemNum = 0;
@@ -1654,7 +1654,7 @@ public class display {
 					userArray[i][7] = (String) Meminfmodel.getValueAt(i, 6);
 					userArray[i][8] = (String) Meminfmodel.getValueAt(i, 7);
 					userArray[i][9] = (String) Meminfmodel.getValueAt(i, 8);
-					if(i > 2){//³ı¹ÜÀí²ãÆäËûÈËÈ¨ÏŞ¾ùÎªÆÕÍ¨(0)£¬³õÊ¼»¯ÍËÉçĞÅÏ¢¾ùÎªÎ´Ìá½»(f),ÔÚÉçÍÅÀï(t)
+					if(i > 2){//é™¤ç®¡ç†å±‚å…¶ä»–äººæƒé™å‡ä¸ºæ™®é€š(0)ï¼Œåˆå§‹åŒ–é€€ç¤¾ä¿¡æ¯å‡ä¸ºæœªæäº¤(f),åœ¨ç¤¾å›¢é‡Œ(t)
 					userArray[i][10] = "0";
 					userArray[i][11] = "f";
 					userArray[i][12] = "t";
@@ -1673,18 +1673,18 @@ public class display {
 					}
 			}
 				MeminfPanel.remove(MemNumLabel);
-				MemNumLabel = new JLabel("±¾ÉçÍÅ¹²ÓĞ  "+MemNum+"  ÈË");
+				MemNumLabel = new JLabel("æœ¬ç¤¾å›¢å…±æœ‰  "+MemNum+"  äºº");
 				MemNumLabel.setFont(new Font("MemNumLabel",Font.BOLD, 15));
 				MeminfPanel.add(MemNumLabel);
 				MemNumLabel.setBounds(0, 0, 150, 30);
-				ClubArray[3] =  ""+MemNum;//½«ÕûĞÍMemNum×ªÎª×Ö·û´®
+				ClubArray[3] =  ""+MemNum;//å°†æ•´å‹MemNumè½¬ä¸ºå­—ç¬¦ä¸²
 				yonghuFileWrite();
 				ClubFileWrite();
 				kaopingWrite();
-				MeminfTable.clearSelection();//È¡ÏûÑ¡Ôñ
+				MeminfTable.clearSelection();//å–æ¶ˆé€‰æ‹©
 			}
 		});
-		/*¿¼ÆÀÇé¿öÃæ°åÉçÔ±¿¼ÆÀ°´Å¥¼àÌıÆ÷*/
+		/*è€ƒè¯„æƒ…å†µé¢æ¿ç¤¾å‘˜è€ƒè¯„æŒ‰é’®ç›‘å¬å™¨*/
 		givekaoping.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Savekaoping.setEnabled(true);
@@ -1692,7 +1692,7 @@ public class display {
 				givekaoping.setEnabled(false);
 			}
 		});
-		/*¿¼ÆÀÇé¿öÃæ°å±£´æ¿¼ÆÀ°´Å¥¼àÌıÆ÷*/
+		/*è€ƒè¯„æƒ…å†µé¢æ¿ä¿å­˜è€ƒè¯„æŒ‰é’®ç›‘å¬å™¨*/
 		Savekaoping.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				for(int i=0; i<kaopingArray.length; i++){
@@ -1704,13 +1704,13 @@ public class display {
 					}
 					kaopingWrite();
 				}
-				kaopingTable.clearSelection();//È¡ÏûÑ¡Ôñ
+				kaopingTable.clearSelection();//å–æ¶ˆé€‰æ‹©
 				givekaoping.setEnabled(true);
 				kaopingTable.setEnabled(false);
 				Savekaoping.setEnabled(false);
 			}
 		});
-		/*·¢²¼¹«¸æÃæ°å·¢²¼°´Å¥*/
+		/*å‘å¸ƒå…¬å‘Šé¢æ¿å‘å¸ƒæŒ‰é’®*/
 		issuepostSure.addActionListener(new ActionListener(){
 			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent e) {
@@ -1718,12 +1718,12 @@ public class display {
 				(postmainbodyText.getText().length() >= 15)&&
 				(postmainbodyText.getText().length() <= 250)){
 				String s1 = posttitleText.getText();
-				long now = System.currentTimeMillis(); // ÅÅĞòÇ°È¡µÃµ±Ç°Ê±¼ä 
+				long now = System.currentTimeMillis(); // æ’åºå‰å–å¾—å½“å‰æ—¶é—´ 
 			     Calendar c = Calendar.getInstance();  
 			    c.setTimeInMillis(now);
-			    String s2 = (userArray[Num][2]+"·¢±íÓÚ" + c.get(Calendar.YEAR) + "Äê" 
-			     + (c.get(Calendar.MONTH) + 1) + "ÔÂ" + c.get(Calendar.DATE)  
-			     + "ÈÕ"+ (c.get(Calendar.HOUR)+12) + "Ê±" + c.get(Calendar.MINUTE)+"·Ö");
+			    String s2 = (userArray[Num][2]+"å‘è¡¨äº" + c.get(Calendar.YEAR) + "å¹´" 
+			     + (c.get(Calendar.MONTH) + 1) + "æœˆ" + c.get(Calendar.DATE)  
+			     + "æ—¥"+ (c.get(Calendar.HOUR)+12) + "æ—¶" + c.get(Calendar.MINUTE)+"åˆ†");
 			    String s3 = postmainbodyText.getText()+" "+s2;
 			     int i = 0;
 			     while(ClubpostArray[i][0] != null){
@@ -1750,7 +1750,7 @@ public class display {
 				}
 			}
 		});
-		/*·¢²¼¹«¸æÃæ°åÈ¡Ïû°´Å¥*/
+		/*å‘å¸ƒå…¬å‘Šé¢æ¿å–æ¶ˆæŒ‰é’®*/
 		issuepostCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				posttitleText.setText(null);
@@ -1758,16 +1758,16 @@ public class display {
 				card2.show(mainPanel, "ClubpostPanel");
 			}
 		});
-		/*ÁôÑÔ°åÃæ°åÁôÑÔ°´Å¥*/
+		/*ç•™è¨€æ¿é¢æ¿ç•™è¨€æŒ‰é’®*/
 		liuyanOK.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				if(liuyanText.getText().length() > 0){
-				long now = System.currentTimeMillis(); // ÅÅĞòÇ°È¡µÃµ±Ç°Ê±¼ä 
+				long now = System.currentTimeMillis(); // æ’åºå‰å–å¾—å½“å‰æ—¶é—´ 
 				  Calendar c = Calendar.getInstance();  
 				  c.setTimeInMillis(now);
-				  String s = ("["+c.get(Calendar.YEAR) + "Äê" 
-				 + (c.get(Calendar.MONTH) + 1) + "ÔÂ" + c.get(Calendar.DATE)  
-				 + "ÈÕ"+ (c.get(Calendar.HOUR)+12) + "Ê±" + c.get(Calendar.MINUTE)+"·Ö"
+				  String s = ("["+c.get(Calendar.YEAR) + "å¹´" 
+				 + (c.get(Calendar.MONTH) + 1) + "æœˆ" + c.get(Calendar.DATE)  
+				 + "æ—¥"+ (c.get(Calendar.HOUR)+12) + "æ—¶" + c.get(Calendar.MINUTE)+"åˆ†"
 				 +"]"+userArray[Num][2]+":");
 					for(int i=0; i<liuyanArray.length; i++){
 						if(liuyanArray[i] != null){}
@@ -1784,7 +1784,7 @@ public class display {
 				}
 			}
 		});
-		/*ÁôÑÔ°åÃæ°åÇå¿Õ°´Å¥*/
+		/*ç•™è¨€æ¿é¢æ¿æ¸…ç©ºæŒ‰é’®*/
 		liuyanCancel.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				liuyanText.setText(null);
@@ -1792,25 +1792,25 @@ public class display {
 		});
 		
 	}
-	/*¶ÁÈ¡ËùÓĞÓÃ»§ĞÅÏ¢*/
+	/*è¯»å–æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯*/
 	void FileRead() {
 		try {
-			FileInputStream file1 = new FileInputStream("ÓÃ»§ĞÅÏ¢.txt");
+			FileInputStream file1 = new FileInputStream("ç”¨æˆ·ä¿¡æ¯.txt");
 			InputStreamReader file11 = new InputStreamReader(file1);
 			BufferedReader reader1 = new BufferedReader(file11);
-			FileInputStream file2 = new FileInputStream("¿¼ÆÀĞÅÏ¢.txt");
+			FileInputStream file2 = new FileInputStream("è€ƒè¯„ä¿¡æ¯.txt");
 			InputStreamReader file22 = new InputStreamReader(file2);
 			BufferedReader reader2 = new BufferedReader(file22);
-			FileInputStream file3 = new FileInputStream("ÉçÍÅĞÅÏ¢.txt");
+			FileInputStream file3 = new FileInputStream("ç¤¾å›¢ä¿¡æ¯.txt");
 			InputStreamReader file33 = new InputStreamReader(file3);
 			BufferedReader reader3 = new BufferedReader(file33);
-			FileInputStream file4 = new FileInputStream("ÍËÉçĞÅÏ¢.txt");
+			FileInputStream file4 = new FileInputStream("é€€ç¤¾ä¿¡æ¯.txt");
 			InputStreamReader file44 = new InputStreamReader(file4);
 			BufferedReader reader4 = new BufferedReader(file44);
-			FileInputStream file5 = new FileInputStream("¹«¸æĞÅÏ¢.txt");
+			FileInputStream file5 = new FileInputStream("å…¬å‘Šä¿¡æ¯.txt");
 			InputStreamReader file55 = new InputStreamReader(file5);
 			BufferedReader reader5 = new BufferedReader(file55);
-			FileInputStream file6 = new FileInputStream("ÁôÑÔĞÅÏ¢.txt");
+			FileInputStream file6 = new FileInputStream("ç•™è¨€ä¿¡æ¯.txt");
 			InputStreamReader file66 = new InputStreamReader(file6);
 			BufferedReader reader6 = new BufferedReader(file66);
 			String s;
@@ -1861,12 +1861,12 @@ public class display {
 		}
 	}
 	
-	/*ÎÄ¼şĞÅÏ¢Ğ´Èëº¯Êı*/
-	/*ÍËÉçĞÅÏ¢Ğ´Èë*/
+	/*æ–‡ä»¶ä¿¡æ¯å†™å…¥å‡½æ•°*/
+	/*é€€ç¤¾ä¿¡æ¯å†™å…¥*/
 	void ExitClubinfWrite(){
         try {
-			File fileout = new File("ÍËÉçĞÅÏ¢.txt");
-			FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş
+			File fileout = new File("é€€ç¤¾ä¿¡æ¯.txt");
+			FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶
 			BufferedWriter writer = new BufferedWriter(write);
 			for(int k=0; k<ExitClubArray.length; k++){
 				if(ExitClubArray[k][0] != null){
@@ -1883,11 +1883,11 @@ public class display {
 			e.printStackTrace();
 		}
 	}
-	/*ÓÃ»§ĞÅÏ¢Ğ´Èë*/
+	/*ç”¨æˆ·ä¿¡æ¯å†™å…¥*/
 	void yonghuFileWrite(){
 			try {
-				File fileout = new File("ÓÃ»§ĞÅÏ¢.txt");
-				FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş
+				File fileout = new File("ç”¨æˆ·ä¿¡æ¯.txt");
+				FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶
 				BufferedWriter writer = new BufferedWriter(write);
 				for(int i=0; i<userArray.length; i++){
 					if(userArray[i][0] != null){
@@ -1909,11 +1909,11 @@ public class display {
 			}
 			
 	}
-	/*ÉçÍÅĞÅÏ¢Ğ´Èë*/
+	/*ç¤¾å›¢ä¿¡æ¯å†™å…¥*/
 	void ClubFileWrite(){
 		try{
-			File fileout = new File("ÉçÍÅĞÅÏ¢.txt");
-			FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş
+			File fileout = new File("ç¤¾å›¢ä¿¡æ¯.txt");
+			FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶
 				for(int i=0; i<ClubArray.length-1; i++){
 				write.write(ClubArray[i]+"-");
 				}
@@ -1924,11 +1924,11 @@ public class display {
 			e.printStackTrace();
 		}
 	}
-	/*¹«¸æĞÅÏ¢Ğ´Èë*/
+	/*å…¬å‘Šä¿¡æ¯å†™å…¥*/
 	void ClubpostWrite(){
         try {
-			File fileout = new File("¹«¸æĞÅÏ¢.txt");
-			FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş
+			File fileout = new File("å…¬å‘Šä¿¡æ¯.txt");
+			FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶
 			BufferedWriter writer = new BufferedWriter(write);
 			for(int k=0; k<ClubpostArray.length; k++){
 				if(ClubpostArray[k][0] != null){
@@ -1945,11 +1945,11 @@ public class display {
 			e.printStackTrace();
 		}
 	}
-	/*¿¼ÆÀĞÅÏ¢Ğ´Èë*/
+	/*è€ƒè¯„ä¿¡æ¯å†™å…¥*/
 	void kaopingWrite(){
         try {
-			File fileout = new File("¿¼ÆÀĞÅÏ¢.txt");
-			FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş
+			File fileout = new File("è€ƒè¯„ä¿¡æ¯.txt");
+			FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶
 			BufferedWriter writer = new BufferedWriter(write);
 			for(int k=0; k<kaopingArray.length; k++){
 				if(kaopingArray[k][0] != null){
@@ -1967,11 +1967,11 @@ public class display {
 			e.printStackTrace();
 		}
 	}
-	/*ÁôÑÔĞÅÏ¢Ğ´Èë*/
+	/*ç•™è¨€ä¿¡æ¯å†™å…¥*/
 	void liuyanWrite(){
         try {
-			File fileout = new File("ÁôÑÔĞÅÏ¢.txt");
-			FileWriter write = new FileWriter(fileout,false);//¸²¸ÇÖ®Ç°µÄÄÚÈİÔÙ´ÎĞ´ÈëÎÄ¼ş//×Ö·ûÁ÷
+			File fileout = new File("ç•™è¨€ä¿¡æ¯.txt");
+			FileWriter write = new FileWriter(fileout,false);//è¦†ç›–ä¹‹å‰çš„å†…å®¹å†æ¬¡å†™å…¥æ–‡ä»¶//å­—ç¬¦æµ
 			BufferedWriter writer = new BufferedWriter(write);
 			for(int k=0; k<liuyanArray.length; k++){
 				if(liuyanArray[k] != null){
@@ -1992,21 +1992,21 @@ public class display {
 }
 /*
 
-	ĞŞ¸ÄÃÜÂë Ö»ÓĞ¾ÉÃÜÂëÕıÈ·£¬ĞÂÃÜÂë ÖØ¸´ÃÜÂëÏàÍ¬²Å¿ÉÍê³É¸ÄÃÜ
-	ÍËÉçÉêÇë
-	ÎÒÒÑ¾­ÉíĞÄÆ£±¹£¬×î½üÃ¦ÓÚÑ§Ï°¡¢¿ÎÉè£¬ÒÑÎŞĞÄ¹Ø×¢ÉçÍÅ»î¶¯£¬´òËãÍË³öÉçÍÅ£¬Çë¹ÜÀíÔ±Åú×¼£¬Ğ»Ğ»£¡
-	¹ÜÀíÔ±ÉêÇëÒ»´Î ¾Ü¾ø
-	ÆÕÍ¨ÓÃ»§ÉêÇëÒ»´Î Åú×¼
-	¸öÈËĞÅÏ¢ ÉçÍÅĞÅÏ¢ÉçÍÅÈËÊı ÉçÔ±ĞÅÏ¢Ò³ ĞÅÏ¢Í¬²½
-	ÉçÔ±ĞÅÏ¢Ò³ÃæµÄ²éÕÒ¸ßÁÁ  ĞŞ¸Ä É¾³ıĞÅÏ¢ ±£´æ É¾³ıºó ¿¼ÆÀĞÅÏ¢Ò³µÄĞÅÏ¢Í¬Ñù±»É¾³ı
-	¿¼ÆÀÒ³µÄ¿¼ÆÀĞÅÏ¢ĞŞ¸Ä 
-	·¢²¼Ò»ÌõĞÂ¹«¸æ
-	¿ÎÉèÑéÊÕ
-	½ñÌìÏÂÎçÁ½µãÑĞ¾¿Ôº405ÑéÊÕ¿ÎÉè£¬Ã»ÓĞÍê³ÉµÄÃ÷ÌìÏÂÎçÍ¬ÑùÊ±¼äµØµã¡£
-	É¾³ı¹«¸æ Ò³Êı±ä»¯
-	¹«¸æµÄ·­Ò³ Ö±½Ó¶¨Î»Ò³Êı
-	ÈºÁÄÃæ°å
-	²»Í¬ÓÃ»§Ö®¼äµÄĞÅÏ¢Í¬²½
+	ä¿®æ”¹å¯†ç  åªæœ‰æ—§å¯†ç æ­£ç¡®ï¼Œæ–°å¯†ç  é‡å¤å¯†ç ç›¸åŒæ‰å¯å®Œæˆæ”¹å¯†
+	é€€ç¤¾ç”³è¯·
+	æˆ‘å·²ç»èº«å¿ƒç–²æƒ«ï¼Œæœ€è¿‘å¿™äºå­¦ä¹ ã€è¯¾è®¾ï¼Œå·²æ— å¿ƒå…³æ³¨ç¤¾å›¢æ´»åŠ¨ï¼Œæ‰“ç®—é€€å‡ºç¤¾å›¢ï¼Œè¯·ç®¡ç†å‘˜æ‰¹å‡†ï¼Œè°¢è°¢ï¼
+	ç®¡ç†å‘˜ç”³è¯·ä¸€æ¬¡ æ‹’ç»
+	æ™®é€šç”¨æˆ·ç”³è¯·ä¸€æ¬¡ æ‰¹å‡†
+	ä¸ªäººä¿¡æ¯ ç¤¾å›¢ä¿¡æ¯ç¤¾å›¢äººæ•° ç¤¾å‘˜ä¿¡æ¯é¡µ ä¿¡æ¯åŒæ­¥
+	ç¤¾å‘˜ä¿¡æ¯é¡µé¢çš„æŸ¥æ‰¾é«˜äº®  ä¿®æ”¹ åˆ é™¤ä¿¡æ¯ ä¿å­˜ åˆ é™¤å è€ƒè¯„ä¿¡æ¯é¡µçš„ä¿¡æ¯åŒæ ·è¢«åˆ é™¤
+	è€ƒè¯„é¡µçš„è€ƒè¯„ä¿¡æ¯ä¿®æ”¹ 
+	å‘å¸ƒä¸€æ¡æ–°å…¬å‘Š
+	è¯¾è®¾éªŒæ”¶
+	ä»Šå¤©ä¸‹åˆä¸¤ç‚¹ç ”ç©¶é™¢405éªŒæ”¶è¯¾è®¾ï¼Œæ²¡æœ‰å®Œæˆçš„æ˜å¤©ä¸‹åˆåŒæ ·æ—¶é—´åœ°ç‚¹ã€‚
+	åˆ é™¤å…¬å‘Š é¡µæ•°å˜åŒ–
+	å…¬å‘Šçš„ç¿»é¡µ ç›´æ¥å®šä½é¡µæ•°
+	ç¾¤èŠé¢æ¿
+	ä¸åŒç”¨æˆ·ä¹‹é—´çš„ä¿¡æ¯åŒæ­¥
 	
 */
 
